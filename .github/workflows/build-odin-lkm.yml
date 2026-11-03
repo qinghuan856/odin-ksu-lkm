@@ -77,7 +77,8 @@ jobs:
             *)           cp "$CFG" .config ;;
           esac
 
-          for opt in KPROBES EXT4_FS MODULES KALLSYMS SECCOMP SECCOMP_FILTER; do
+          for opt in KPROBES EXT4_FS MODULES KALLSYMS SECCOMP SECCOMP_FILTER \
+                     SECURITY SECURITY_NETWORK SECURITY_SELINUX; do
             grep -q "^CONFIG_${opt}=y" .config || ./scripts/config --file .config -e "$opt"
           done
           ./scripts/config --file .config -d KSU || true
@@ -90,6 +91,9 @@ jobs:
 
           echo "================ 关键配置 ================"
           grep -E '^CONFIG_(MODULES|MODULE_SIG|MODULE_SIG_FORCE|MODVERSIONS|KPROBES|KALLSYMS|EXT4_FS|SECCOMP|SECCOMP_FILTER|SECURITY_SELINUX)=' .config || true
+          echo "=========================================="
+          echo "================ ABI 关键项 =============="
+          grep -E '^CONFIG_(ARM64_VA_BITS|ARM64_4K_PAGES|ARM64_16K_PAGES|ARM64_64K_PAGES|ARM64_PAGE_SHIFT|SMP|NR_CPUS|PREEMPT|PREEMPT_NONE|PREEMPT_VOLUNTARY|THREAD_INFO_IN_TASK|HARDENED_USERCOPY|SECURITY|SECURITY_SELINUX|MODULE_SIG)=' .config || true
           echo "=========================================="
 
           if grep -q '^CONFIG_MODULE_SIG_FORCE=y' .config; then
@@ -104,9 +108,15 @@ jobs:
           make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts
           make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- modules_prepare || true
           make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- security/selinux/ || true
-          for h in security/selinux/flask.h security/selinux/av_permissions.h; do
-            [ -f "$h" ] || make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- "$h" || true
-          done
+          if [ ! -f security/selinux/flask.h ]; then
+            make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts/selinux/genheaders/ || true
+            GEN=$(find "$(pwd)" -type f -name genheaders -perm -u+x | head -1)
+            echo "genheaders=$GEN"
+            if [ -n "$GEN" ]; then
+              "$GEN" security/selinux/flask.h security/selinux/include/classmap.h && echo "手工生成 flask.h 成功"
+              "$GEN" security/selinux/av_permissions.h security/selinux/include/classmap.h || true
+            fi
+          fi
           echo "--- selinux 生成头 ---"
           if [ -f security/selinux/flask.h ]; then
             ls -l security/selinux/flask.h security/selinux/av_permissions.h
