@@ -70,11 +70,30 @@ jobs:
           fi
           [ -n "$CFG" ] && [ -f "$CFG" ] || { echo "::error::没找到 config"; exit 1; }
 
+          echo "--- 仓库里全部 arm64 config ---"
+          find arch/arm64/configs -type f | sed 's|arch/arm64/configs/||' | sort | head -40
+
           REL="${CFG#arch/arm64/configs/}"
-          echo "config=$CFG rel=$REL"
+          echo "target fragment=$CFG rel=$REL"
           case "$REL" in
-            *_defconfig) make ARCH=arm64 "$REL" ;;
-            *)           cp "$CFG" .config ;;
+            *_defconfig)
+              make ARCH=arm64 "$REL"
+              ;;
+            *)
+              # odin_QGKI.config 是 fragment，必须合并到 base defconfig 上
+              BASE=""
+              for b in gki_defconfig vendor/gki_defconfig vendor/odin_defconfig odin_defconfig; do
+                [ -f "arch/arm64/configs/$b" ] && { BASE="$b"; break; }
+              done
+              if [ -n "$BASE" ]; then
+                echo "base defconfig = $BASE，merge $REL"
+                make ARCH=arm64 "$BASE"
+                scripts/kconfig/merge_config.sh -m -O "$(pwd)" .config "arch/arm64/configs/$REL"
+              else
+                echo "!! 没有找到 base defconfig，直接把 fragment 当 .config"
+                cp "$CFG" .config
+              fi
+              ;;
           esac
 
           for opt in KPROBES EXT4_FS MODULES KALLSYMS SECCOMP SECCOMP_FILTER \
