@@ -84,9 +84,9 @@ static const struct fsnotify_ops ksu_ops = {
 };
 #else
 /* 5.4~5.8: fsnotify_ops 只有 handle_event */
-static int ksu_handle_event(struct inode *inode, u32 mask, const void *data, int data_type,
-                            const struct qstr *file_name, u32 cookie,
-                            struct fsnotify_iter_info *iter_info)
+static int ksu_handle_event(struct fsnotify_group *group, struct inode *inode, u32 mask,
+                            const void *data, int data_type, const struct qstr *file_name,
+                            u32 cookie, struct fsnotify_iter_info *iter_info)
 {
     return ksu_check_pkg_list(mask, file_name);
 }

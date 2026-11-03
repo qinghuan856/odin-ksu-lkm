@@ -1,0 +1,225 @@
+make: Entering directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/Kbuild:127: -- KernelSU: ./usr/include not found, preinit disabled
+
+  WARNING: Symbol version dump ./Module.symvers
+           is missing; modules will have no dependencies and modversions.
+
+-- KernelSU: Git repo detected at /home/runner/work/odin-ksu-lkm/odin-ksu-lkm
+-- KernelSU version: 30003
+-- KSU_NEW_DCACHE_FLUSH: 0
+-- KernelSU Manager package name: me.weishu.kernelsu
+-- KernelSU Manager signature size: 0x033b
+-- KernelSU Manager signature hash: c371061b19d8c7d7d6133c6a9bafe198fa944e50c1b31c9d8daa8d7f1fc2d2d6
+-- KernelSU is PR Build: 0
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/core/init.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/kernel_umount.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/kernel_umount.c:15:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.h:6:10: fatal error: uapi/app_profile.h: No such file or directory
+    6 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/core/init.c:10:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.h:6:10: fatal error: uapi/app_profile.h: No such file or directory
+    6 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/kernel_umount.o] Error 1
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/core/init.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/module_blacklist.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/sulog.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/sulog.c:6:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/feature.h:5:10: fatal error: uapi/feature.h: No such file or directory
+    5 | #include "uapi/feature.h" // IWYU pragma: keep
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/sulog.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/sucompat.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/lsm_hook.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/sucompat.c:24:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.h:6:10: fatal error: uapi/app_profile.h: No such file or directory
+    6 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/sucompat.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/setuid_hook.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/setuid_hook.c:15:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.h:6:10: fatal error: uapi/app_profile.h: No such file or directory
+    6 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/syscall_event_bridge.o
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/setuid_hook.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/syscall_hook_manager.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/syscall_event_bridge.c:16:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/app_profile.h:4:10: fatal error: uapi/app_profile.h: No such file or directory
+    4 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/syscall_event_bridge.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/tp_marker.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/arm64/patch_memory.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/tp_marker.c:9:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.h:6:10: fatal error: uapi/app_profile.h: No such file or directory
+    6 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/tp_marker.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/hook/arm64/syscall_hook.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/infra/file_wrapper.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/infra/event_queue.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/infra/file_wrapper.c:16:
+./security/selinux/include/objsec.h:28:10: fatal error: flask.h: No such file or directory
+   28 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/infra/file_wrapper.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/infra/seccomp_cache.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/infra/su_mount_ns.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/infra/symbol_resolver.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/manager/apk_sign.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/manager/pkg_observer.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/manager/pkg_observer.c:95:21: error: initialization of ‘int (*)(struct fsnotify_group *, struct inode *, u32,  const void *, int,  const struct qstr *, u32,  struct fsnotify_iter_info *)’ {aka ‘int (*)(struct fsnotify_group *, struct inode *, unsigned int,  const void *, int,  const struct qstr *, unsigned int,  struct fsnotify_iter_info *)’} from incompatible pointer type ‘int (*)(struct inode *, u32,  const void *, int,  const struct qstr *, u32,  struct fsnotify_iter_info *)’ {aka ‘int (*)(struct inode *, unsigned int,  const void *, int,  const struct qstr *, unsigned int,  struct fsnotify_iter_info *)’} [-Werror=incompatible-pointer-types]
+   95 |     .handle_event = ksu_handle_event,
+      |                     ^~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/manager/pkg_observer.c:95:21: note: (near initialization for ‘ksu_ops.handle_event’)
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/manager/apk_sign.c:23:10: fatal error: uapi/app_profile.h: No such file or directory
+   23 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/manager/apk_sign.o] Error 1
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+cc1: some warnings being treated as errors
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/manager/throne_tracker.o
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/manager/pkg_observer.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.c:29:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.h:6:10: fatal error: uapi/app_profile.h: No such file or directory
+    6 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/app_profile.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/manager/throne_tracker.c:13:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.h:6:10: fatal error: uapi/app_profile.h: No such file or directory
+    6 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/manager/throne_tracker.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/feature.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/feature.c:1:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/feature.h:5:10: fatal error: uapi/feature.h: No such file or directory
+    5 | #include "uapi/feature.h" // IWYU pragma: keep
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/feature.o] Error 1
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/app_profile.c:15:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.h:6:10: fatal error: uapi/app_profile.h: No such file or directory
+    6 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/runtime/boot_event.o
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/app_profile.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/runtime/ksud_integration.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/runtime/boot_event.c:7:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.h:6:10: fatal error: uapi/app_profile.h: No such file or directory
+    6 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/runtime/boot_event.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/infra/btf_parser.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/runtime/ksud_integration.c:28:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/feature.h:5:10: fatal error: uapi/feature.h: No such file or directory
+    5 | #include "uapi/feature.h" // IWYU pragma: keep
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/runtime/ksud_integration.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/inode.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/selinux.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/inode.c:6:
+./security/selinux/include/objsec.h:28:10: fatal error: flask.h: No such file or directory
+   28 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/inode.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/rules.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/selinux.c:4:
+./security/selinux/include/objsec.h:28:10: fatal error: flask.h: No such file or directory
+   28 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/selinux.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/sepolicy.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/rules.c:2:
+./security/selinux/include/security.h:18:10: fatal error: flask.h: No such file or directory
+   18 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/rules.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/sulog/event.o
+In file included from ./security/selinux/ss/avtab.h:24,
+                 from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/sepolicy.c:1:
+./security/selinux/include/security.h:18:10: fatal error: flask.h: No such file or directory
+   18 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/sepolicy.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/sulog/fd.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/sulog/event.c:23:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/sulog/event.h:7:10: fatal error: uapi/sulog.h: No such file or directory
+    7 | #include "uapi/sulog.h" // IWYU pragma: keep
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/sulog/event.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/supercall/dispatch.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/sulog/fd.c:12:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/sulog/event.h:7:10: fatal error: uapi/sulog.h: No such file or directory
+    7 | #include "uapi/sulog.h" // IWYU pragma: keep
+      |          ^~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/sulog/fd.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/supercall/perm.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/supercall/dispatch.c:11:10: fatal error: uapi/supercall.h: No such file or directory
+   11 | #include "uapi/supercall.h"
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/supercall/dispatch.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/supercall/supercall.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/supercall/perm.c:5:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/allowlist.h:6:10: fatal error: uapi/app_profile.h: No such file or directory
+    6 | #include "uapi/app_profile.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/supercall/perm.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/adb_root.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/supercall/supercall.c:19:10: fatal error: uapi/supercall.h: No such file or directory
+   19 | #include "uapi/supercall.h"
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/supercall/supercall.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/selinux_hide.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/adb_root.c:15:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/feature.h:5:10: fatal error: uapi/feature.h: No such file or directory
+    5 | #include "uapi/feature.h" // IWYU pragma: keep
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/adb_root.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/shell_su_adb_only.o
+In file included from ./security/selinux/ss/avtab.h:24,
+                 from ./security/selinux/ss/policydb.h:26,
+                 from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/selinux/sepolicy.h:6,
+                 from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/selinux_hide.c:5:
+./security/selinux/include/security.h:18:10: fatal error: flask.h: No such file or directory
+   18 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/selinux_hide.o] Error 1
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/shell_su_adb_only.c:8:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/policy/feature.h:5:10: fatal error: uapi/feature.h: No such file or directory
+    5 | #include "uapi/feature.h" // IWYU pragma: keep
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel/feature/shell_su_adb_only.o] Error 1
+make[1]: Target '__build' not remade because of errors.
+make: *** [Makefile:1843: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu-kernel] Error 2
+make: Target 'modules' not remade because of errors.
+make: Leaving directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'

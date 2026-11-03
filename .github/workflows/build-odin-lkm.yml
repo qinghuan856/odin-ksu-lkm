@@ -104,21 +104,30 @@ jobs:
           make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts
           make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- modules_prepare || true
           make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- security/selinux/ || true
+          for h in security/selinux/flask.h security/selinux/av_permissions.h; do
+            [ -f "$h" ] || make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- "$h" || true
+          done
           echo "--- selinux 生成头 ---"
-          ls -l security/selinux/flask.h security/selinux/av_permissions.h 2>/dev/null || echo "!! 未生成"
+          if [ -f security/selinux/flask.h ]; then
+            ls -l security/selinux/flask.h security/selinux/av_permissions.h
+          else
+            echo "::error::flask.h 仍未生成，security/selinux 无法编译"
+            find . -name 'flask.h' -o -name 'av_permissions.h' | head
+            exit 1
+          fi
 
       - name: 编译 kernelsu.ko
         run: |
           set -uo pipefail
           KDIR="$GITHUB_WORKSPACE/odin"
-          MSRC="$GITHUB_WORKSPACE/ksu-kernel"
+          MSRC="$GITHUB_WORKSPACE/ksu/kernel"
           echo "module src: $MSRC"
 
           build_with() {
             local tag="$1"; shift
             echo "=== 尝试编译: $tag ==="
             make -j"$(nproc)" -k -C "$KDIR" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \
-                 "$@" M="$MSRC" CONFIG_KSU=m modules 2>&1 | tee "build-$tag.log"
+                 "$@" M="$MSRC" CONFIG_KSU=m KSU_KERNEL_DIR="$MSRC" modules 2>&1 | tee "build-$tag.log"
             local rc=${PIPESTATUS[0]}
             echo "退出码: $rc"
             if [ "$rc" -eq 0 ] && [ -f "$MSRC/kernelsu.ko" ]; then
@@ -143,7 +152,7 @@ jobs:
           if [ ! -f .build-result ]; then
             echo "::error::编译失败"
             echo "===== 去重后的错误 ====="
-            grep -hE "error:" build-*.log | sed 's|.*/ksu-kernel/||' | sort -u | head -40
+            grep -hE "error:" build-*.log | sed 's|.*/ksu/kernel/||' | sort -u | head -40
             exit 1
           fi
           cat .build-result
@@ -153,7 +162,7 @@ jobs:
         run: |
           set -uo pipefail
           mkdir -p out
-          KO="ksu-kernel/kernelsu.ko"
+          KO="ksu/kernel/kernelsu.ko"
           if [ -f "$KO" ]; then
             OUT="out/${{ inputs.kmi_name }}_kernelsu.ko"
             cp "$KO" "$OUT"
