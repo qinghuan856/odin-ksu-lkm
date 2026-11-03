@@ -1,0 +1,2759 @@
+make: Entering directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/Kbuild:126: -- KernelSU: ./usr/include not found, preinit disabled
+
+  WARNING: Symbol version dump ./Module.symvers
+           is missing; modules will have no dependencies and modversions.
+
+-- KernelSU: Git repo detected at /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu
+-- KernelSU version: 32716
+-- KSU_NEW_DCACHE_FLUSH: 0
+-- KernelSU Manager package name: me.weishu.kernelsu
+-- KernelSU Manager signature size: 0x033b
+-- KernelSU Manager signature hash: c371061b19d8c7d7d6133c6a9bafe198fa944e50c1b31c9d8daa8d7f1fc2d2d6
+-- KernelSU is PR Build: 0
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/core/init.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/kernel_umount.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/core/init.c:17:
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/lsm_hook.h:4:
+In file included from ./include/linux/lsm_hooks.h:28:
+In file included from ./include/linux/security.h:32:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+3 warnings generated.
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/module_blacklist.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sulog.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/lsm_hook.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.c:7:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/lsm_hook.c:3:
+In file included from ./include/linux/kallsyms.h:12:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.c:8:10: fatal error: 'linux/pgtable.h' file not found
+    8 | #include <linux/pgtable.h>
+      |          ^~~~~~~~~~~~~~~~~
+3 warnings and 1 error generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.o
+3 warnings generated.
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/syscall_event_bridge.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:9:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:30:50: error: no member named 'filter' in 'struct seccomp'
+   30 |         ksu_seccomp_allow_cache(current->seccomp.filter, __NR_reboot);
+      |                                 ~~~~~~~~~~~~~~~~ ^
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/syscall_event_bridge.c:8:
+In file included from ./include/linux/ptrace.h:7:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:30:58: error: use of undeclared identifier '__NR_reboot'
+   30 |         ksu_seccomp_allow_cache(current->seccomp.filter, __NR_reboot)./include/linux/signal.h;:
+233      :| 2                                                         ^:
+ note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/syscall_event_bridge.c:8:
+In file included from ./include/linux/ptrace.h:10:
+In file included from ./include/linux/pid_namespace.h:7:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:39:30: error: no member named 'mode' in 'struct seccomp'
+   39 |         if (current->seccomp.mode == SECCOMP_MODE_FILTER && current->seccomp.filter) {
+      |             ~~~~~~~~~~~~~~~~ ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:39:78: error: no member named 'filter' in 'struct seccomp'
+   39 |         if (current->seccomp.mode == SECCOMP_MODE_FILTER && current->seccomp.filter) {
+      |                                                             ~~~~~~~~~~~~~~~~ ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:41:54: error: no member named 'filter' in 'struct seccomp'
+   41 |             ksu_seccomp_allow_cache(current->seccomp.filter, __NR_reboot);
+      |                                     ~~~~~~~~~~~~~~~~ ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:41:62: error: use of undeclared identifier '__NR_reboot'
+   41 |             ksu_seccomp_allow_cache(current->seccomp.filter, __NR_reboot);
+      |                                                              ^
+12 warnings and 6 errors generated.
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/syscall_hook_manager.o
+15 warnings generated.
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/tp_marker.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/syscall_hook_manager.c:3:
+In file included from ./include/linux/kprobes.h:29:
+In file included from ./include/linux/ftrace.h:11:
+In file included from ./include/linux/kallsyms.h:12:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/tp_marker.c:6:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/syscall_hook_manager.c:3:
+In file included from ./include/linux/kprobes.h:29:
+In file included from ./include/linux/ftrace.h:14:
+In file included from ./include/linux/ptrace.h:7:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \./include/linux/signal.h:
+      |         ^
+./include/linux/signal.h203:2: :note: 147insert '__attribute__((fallthrough));' to silence this warning:
+1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h  :203137 | :        2c:a snote: eexpanded from macro '_SIG_SET_BINOP' 
+1: s  e137t | -        >csaisge[ 01]:  =                 -        1        ;        
+                      | \        ^
+
+            | |         ^        __attribute__((fallthrough)); 
+
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(./include/linux/signal.hs:i233g:a2n:d swarning: eunannotated fall-through between switch labels [-Wimplicit-fallthrough]t
+s, _s  i233g | _        acnads)e
+       1| :^ 
+;
+      | ./include/linux/signal.h        ^:
+133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+12 warnings generated.
+15 warnings generated.
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/patch_memory.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/syscall_hook.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/patch_memory.c:14:
+In file included from ./arch/arm64/include/asm/cacheflush.h:11:
+In file included from ./include/linux/kgdb.h:20:
+In file included from ./arch/arm64/include/asm/kgdb.h:14:
+In file included from ./include/linux/ptrace.h:7:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/patch_memory.c:14:
+In file included from ./arch/arm64/include/asm/cacheflush.h:11:
+In file included from ./include/linux/kgdb.h:20:
+In file included from ./arch/arm64/include/asm/kgdb.h:14:
+In file included from ./include/linux/ptrace.h:10:
+In file included from ./include/linux/pid_namespace.h:7:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/syscall_hook.c:5:
+In file included from ./include/linux/kallsyms.h:12:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/syscall_hook.c:7:
+In file included from ./arch/arm64/include/asm/cacheflush.h:11:
+In file included from ./include/linux/kgdb.h:20:
+In file included from ./arch/arm64/include/asm/kgdb.h:14:
+In file included from ./include/linux/ptrace.h:7:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/patch_memory.c:139:16: error: implicit declaration of function 'copy_to_kernel_nofault' [-Werror,-Wimplicit-function-declaration]
+  139 |     ret = (int)copy_to_kernel_nofault(map, src, len);
+      |                ^
+15 warnings and 1 error generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/patch_memory.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/file_wrapper.o
+15 warnings generated.
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/event_queue.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/file_wrapper.c:16:
+In file included from ./security/selinux/include/objsec.h:25:
+In file included from ./include/linux/lsm_hooks.h:28:
+In file included from ./include/linux/security.h:32:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/file_wrapper.c:16:
+In file included from ./security/selinux/include/objsec.h:27:
+In file included from ./include/net/net_namespace.h:38:
+./include/linux/skbuff.h:3746:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3746:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3746:2: note: insert 'break;' to avoid fall-through
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3748:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3748:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3748:2: note: insert 'break;' to avoid fall-through
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3750:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3750:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3750:2: note: insert 'break;' to avoid fall-through
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3754:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3754:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3754:2: note: insert 'break;' to avoid fall-through
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3756:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3756:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3756:2: note: insert 'break;' to avoid fall-through
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3758:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.o
+./include/linux/skbuff.h:3758:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3758:2: note: insert 'break;' to avoid fall-through
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/file_wrapper.c:16:
+./security/selinux/include/objsec.h:28:10: fatal error: 'flask.h' file not found
+   28 | #include "flask.h"
+      |          ^~~~~~~~~
+9 warnings and 1 error generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/file_wrapper.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/su_mount_ns.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:6:
+In file included from ./include/linux/filter.h:13:
+In file included from ./include/linux/skbuff.h:17:
+In file included from ./include/linux/bvec.h:13:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:6:
+In file included from ./include/linux/filter.h:13:
+./include/linux/skbuff.h:3746:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3746:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3746:2: note: insert 'break;' to avoid fall-through
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3748:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3748:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3748:2: note: insert 'break;' to avoid fall-through
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3750:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3750:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3750:2: note: insert 'break;' to avoid fall-through
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3754:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3754:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3754:2: note: insert 'break;' to avoid fall-through
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3756:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3756:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3756:2: note: insert 'break;' to avoid fall-through
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3758:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+./include/linux/skbuff.h:3758:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3758:2: note: insert 'break;' to avoid fall-through
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:6:
+In file included from ./include/linux/filter.h:22:
+In file included from ./include/linux/if_vlan.h:10:
+In file included from ./include/linux/netdevice.h:46:
+In file included from ./include/uapi/linux/neighbour.h:6:
+In file included from ./include/linux/netlink.h:9:
+In file included from ./include/net/scm.h:11:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/su_mount_ns.c:13:
+In file included from ./include/linux/syscalls.h:76:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:6:
+In file included from ./include/linux/filter.h:25:
+In file included from ./include/net/sch_generic.h:21:
+In file included from ./include/net/flow_offload.h:7:
+In file included from ./include/linux/rhashtable.h:23:
+./include/linux/jhash.h:90:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+   90 |         case 11: c += (u32)k[10]<<16;   /* fall through */
+      |         ^
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/su_mount_ns.c:13:
+In file included from ./include/linux/syscalls.h:85:
+In file included from ./include/trace/syscall.h:7:
+In file included from ./include/linux/trace_events.h:6:
+In file included from ./include/linux/ring_buffer.h:5:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/jhash.h:90:2: note: insert '__attribute__((fallthrough));' to silence this warning
+   90 |         case 11: c += (u32)k[10]<<16;   /* fall through */
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:90:2: note: insert 'break;' to avoid fall-through
+   90 |         case 11: c += (u32)k[10]<<16;   /* fall through */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:91:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+   91 |         case 10: c += (u32)k[9]<<8;     /* fall through */
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/jhash.h:91:2: note: insert '__attribute__((fallthrough));' to silence this warning
+   91 |         case 10: c += (u32)k[9]<<8;     /* fall through */
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:91:2: note: insert 'break;' to avoid fall-through
+   91 |         case 10: c += (u32)k[9]<<8;     /* fall through */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:92:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+   92 |         case 9:  c += k[8];./include/linux/mm.h             /*:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+ f./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+all through */
+      |         ^
+./include/linux/jhash.h:92:2: note: insert '__attribute__((fallthrough));' to silence this warning
+   92 |         case 9:  c += k[8];             /* fall through */
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:92:2: note: insert 'break;' to avoid fall-through
+   92 |         case 9:  c += k[8];             /* fall through */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:93:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+   93 |         case 8:  b += (u32)k[7]<<24;    /* fall through */
+      |         ^
+./include/linux/jhash.h:93:2: note: insert '__attribute__((fallthrough));' to silence this warning
+   93 |         case 8:  b += (u32)k[7]<<24;    /* fall through */
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:93:2: note: insert 'break;' to avoid fall-through
+   93 |         case 8:  b += (u32)k[7]<<24;    /* fall through */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:94:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+   94 |         case 7:  b += (u32)k[6]<<16;    /* fall through */
+      |         ^
+./include/linux/jhash.h:94:2: note: insert '__attribute__((fallthrough));' to silence this warning
+   94 |         case 7:  b += (u32)k[6]<<16;    /* fall through */
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:94:2: note: insert 'break;' to avoid fall-through
+   94 |         case 7:  b += (u32)k[6]<<16;    /* fall through */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:95:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+   95 |         case 6:  b += (u32)k[5]<<8;     /* fall through */
+      |         ^
+./include/linux/jhash.h:95:2: note: insert '__attribute__((fallthrough));' to silence this warning
+   95 |         case 6:  b += (u32)k[5]<<8;     /* fall through */
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:95:2: note: insert 'break;' to avoid fall-through
+   95 |         case 6:  b += (u32)k[5]<<8;     /* fall through */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:96:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+   96 |         case 5:  b += k[4];             /* fall through */
+      |         ^
+./include/linux/jhash.h:96:2: note: insert '__attribute__((fallthrough));' to silence this warning
+   96 |         case 5:  b += k[4];             /* fall through */
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:96:2: note: insert 'break;' to avoid fall-through
+   96 |         case 5:  b += k[4];             /* fall through */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:97:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+   97 |         case 4:  a += (u32)k[3]<<24;    /* fall through */
+      |         ^
+./include/linux/jhash.h:97:2: note: insert '__attribute__((fallthrough));' to silence this warning
+   97 |         case 4:  a += (u32)k[3]<<24;    /* fall through */
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:97:2: note: insert 'break;' to avoid fall-through
+   97 |         case 4:  a += (u32)k[3]<<24;    /* fall through */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:98:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+   98 |         case 3:  a += (u32)k[2]<<16;    /* fall through */
+      |         ^
+./include/linux/jhash.h:98:2: note: insert '__attribute__((fallthrough));' to silence this warning
+   98 |         case 3:  a += (u32)k[2]<<16;    /* fall through */
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:98:2: note: insert 'break;' to avoid fall-through
+   98 |         case 3:  a += (u32)k[2]<<16;    /* fall through */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:99:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+   99 |         case 2:  a += (u32)k[1]<<8;     /* fall through */
+      |         ^
+./include/linux/jhash.h:99:2: note: insert '__attribute__((fallthrough));' to silence this warning
+   99 |         case 2:  a += (u32)k[1]<<8;     /* fall through */
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:99:2: note: insert 'break;' to avoid fall-through
+   99 |         case 2:  a += (u32)k[1]<<8;     /* fall through */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:100:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  100 |         case 1:  a += k[0];
+      |         ^
+./include/linux/jhash.h:100:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  100 |         case 1:  a += k[0];
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:100:2: note: insert 'break;' to avoid fall-through
+  100 |         case 1:  a += k[0];
+      |         ^
+      |         break; 
+./include/linux/jhash.h:102:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  102 |         case 0: /* Nothing left to add */
+      |         ^
+./include/linux/jhash.h:102:2: note: insert 'break;' to avoid fall-through
+  102 |         case 0: /* Nothing left to add */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:136:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  136 |         case 2: b += k[1];      /* fall through */
+      |         ^
+./include/linux/jhash.h:136:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  136 |         case 2: b += k[1];      /* fall through */
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:136:2: note: insert 'break;' to avoid fall-through
+  136 |         case 2: b += k[1];      /* fall through */
+      |         ^
+      |         break; 
+./include/linux/jhash.h:137:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  137 |         case 1: a += k[0];
+      |         ^
+./include/linux/jhash.h:137:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  137 |         case 1: a += k[0];
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/jhash.h:137:2: note: insert 'break;' to avoid fall-through
+  137 |         case 1: a += k[0];
+      |         ^
+      |         break; 
+./include/linux/jhash.h:139:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  139 |         case 0: /* Nothing left to add */
+      |         ^
+./include/linux/jhash.h:139:2: note: insert 'break;' to avoid fall-through
+  139 |         case 0: /* Nothing left to add */
+      |         ^
+      |         break; 
+15 warnings generated.
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:12:34: error: use of undeclared identifier 'SECCOMP_ARCH_NATIVE_NR'
+   12 |     DECLARE_BITMAP(allow_native, SECCOMP_ARCH_NATIVE_NR);
+      |                                  ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:18:8: error: redefinition of 'seccomp_filter'
+   18 | struct seccomp_filter {
+      |        ^
+./include/linux/seccomp.h:59:8: note: previous definition is here
+   59 | struct seccomp_filter { };
+      |        ^
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/symbol_resolver.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:39:25: error: use of undeclared identifier 'SECCOMP_ARCH_NATIVE_NR'
+   39 |     if (nr >= 0 && nr < SECCOMP_ARCH_NATIVE_NR) {
+      |                         ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:40:31: error: no member named 'cache' in 'struct seccomp_filter'
+   40 |         clear_bit(nr, filter->cache.allow_native);
+      |                       ~~~~~~  ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:56:25: error: use of undeclared identifier 'SECCOMP_ARCH_NATIVE_NR'
+   56 |     if (nr >= 0 && nr < SECCOMP_ARCH_NATIVE_NR) {
+      |                         ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:57:29: error: no member named 'cache' in 'struct seccomp_filter'
+   57 |         set_bit(nr, filter->cache.allow_native);
+      |                     ~~~~~~  ^
+36 warnings and 6 errors generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/apk_sign.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/symbol_resolver.c:2:
+In file included from ./include/linux/kallsyms.h:12:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/apk_sign.c:1:
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/include/util.h:6:
+In file included from ./include/linux/syscalls.h:76:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/symbol_resolver.c:5:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/apk_sign.c:1:
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/include/util.h:6:
+In file included from ./include/linux/syscalls.h:85:
+In file included from ./include/trace/syscall.h:7:
+In file included from ./include/linux/trace_events.h:6:
+In file included from ./include/linux/ring_buffer.h:5:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+|         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+15 warnings generated.
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/apk_sign.c:27:23: warning: field 'shash' with variable sized type 'struct shash_desc' not at the end of a struct or class is a GNU extension [-Wgnu-variable-sized-type-not-at-end]
+   27 |     struct shash_desc shash;
+      |                       ^
+16 warnings generated.
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/throne_tracker.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.c:48:45: error: use of undeclared identifier 'TWA_RESUME'
+   48 |             if (!task_work_add(current, cb, TWA_RESUME))
+      |                                             ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.c:72:6: error: field designator 'handle_inode_event' does not refer to any field in type 'const struct fsnotify_ops'; did you mean 'handle_event'?
+   72 |     .handle_inode_event = ksu_handle_inode_event,
+      |      ^~~~~~~~~~~~~~~~~~
+      |      handle_event
+./include/linux/fsnotify_backend.h:117:8: note: 'handle_event' declared here
+  117 |         int (*handle_event)(struct fsnotify_group *group,
+      |               ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.c:72:27: error: incompatible function pointer types initializing 'int (*)(struct fsnotify_group *, struct inode *, u32, const void *, int, const struct qstr *, u32, struct fsnotify_iter_info *)' (aka 'int (*)(struct fsnotify_group *, struct inode *, unsigned int, const void *, int, const struct qstr *, unsigned int, struct fsnotify_iter_info *)') with an expression of type 'int (struct fsnotify_mark *, u32, struct inode *, struct inode *, const struct qstr *, u32)' (aka 'int (struct fsnotify_mark *, unsigned int, struct inode *, struct inode *, const struct qstr *, unsigned int)') [-Wincompatible-function-pointer-types]
+   72 |     .handle_inode_event = ksu_handle_inode_event,
+      |                           ^~~~~~~~~~~~~~~~~~~~~~
+3 errors generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/allowlist.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/throne_tracker.c:4:
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/include/util.h:6:
+In file included from ./include/linux/syscalls.h:76:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/throne_tracker.c:4:
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/include/util.h:6:
+In file included from ./include/linux/syscalls.h:85:
+In file included from ./include/trace/syscall.h:7:
+In file included from ./include/linux/trace_events.h:6:
+In file included from ./include/linux/ring_buffer.h:5:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+15 warnings generated.
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/allowlist.c:465:32: error: use of undeclared identifier 'TWA_RESUME'
+  465 |     if (task_work_add(tsk, cb, TWA_RESUME)) {
+      |                                ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/allowlist.c:471:5: error: implicit declaration of function 'put_task_struct' [-Werror,-Wimplicit-function-declaration]
+  471 |     put_task_struct(tsk);
+      |     ^
+2 errors generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/allowlist.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/feature.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.c:3:
+In file included from ./include/linux/kallsyms.h:12:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.c:8:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/boot_event.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.c:102:22: error: no member named 'mode' in 'struct seccomp'
+  102 |     current->seccomp.mode = 0;
+      |     ~~~~~~~~~~~~~~~~ ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.c:103:22: error: no member named 'filter' in 'struct seccomp'
+  103 |     current->seccomp.filter = NULL;
+      |     ~~~~~~~~~~~~~~~~ ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.c:104:34: error: no member named 'filter_count' in 'struct seccomp'
+  104 |     atomic_set(&current->seccomp.filter_count, 0);
+      |                 ~~~~~~~~~~~~~~~~ ^
+15 warnings and 3 errors generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.c:4:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/btf_parser.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.c:14:
+In file included from ./include/linux/kprobes.h:29:
+In file included from ./include/linux/ftrace.h:14:
+In file included from ./include/linux/ptrace.h:7:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/inode.o
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.c:140:9: error: implicit declaration of function 'strncpy_from_user_nofault' [-Werror,-Wimplicit-function-declaration]
+  140 |     if (strncpy_from_user_nofault(buf, p, buf_len) <= 0)
+      |         ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.c:140:9: note: did you mean 'strncpy_from_user'?
+./arch/arm64/include/asm/uaccess.h:431:13: note: 'strncpy_from_user' declared here
+  431 | extern long strncpy_from_user(char *dest, const char __user *src, long count);
+      |             ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.c:604:14: error: implicit declaration of function 'copy_from_user_nofault' [-Werror,-Wimplicit-function-declaration]
+  604 |         if (!copy_from_user_nofault(&size, st_size_ptr, sizeof(long))) {
+      |              ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.c:607:18: error: implicit declaration of function 'copy_to_user_nofault' [-Werror,-Wimplicit-function-declaration]
+  607 |             if (!copy_to_user_nofault(st_size_ptr, &new_size, sizeof(long))) {
+      |                  ^
+15 warnings and 3 errors generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/selinux.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/inode.c:6:
+In file included from ./security/selinux/include/objsec.h:25:
+In file included from ./include/linux/lsm_hooks.h:28:
+In file included from ./include/linux/security.h:32:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/selinux.c:4:
+In file included from ./security/selinux/include/objsec.h:25:
+In file included from ./include/linux/lsm_hooks.h:28:
+In file included from ./include/linux/security.h:32:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/inode.c:6:
+In file included from ./security/selinux/include/objsec.h:27:
+In file included from ./include/net/net_namespace.h:38:
+./include/linux/skbuff.h:3746:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3746:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3746:2: note: insert 'break;' to avoid fall-through
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3748:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3748:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3748:2: note: insert 'break;' to avoid fall-through
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3750:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3750:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3750:2: note: insert 'break;' to avoid fall-through
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3754:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3754:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3754:2: note: insert 'break;' to avoid fall-through
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3756:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3756:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3756:2: note: insert 'break;' to avoid fall-through
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3758:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+./include/linux/skbuff.h:3758:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3758:2: note: insert 'break;' to avoid fall-through
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/inode.c:6:
+./security/selinux/include/objsec.h:28:10: fatal error: 'flask.h' file not found
+   28 | #include "flask.h"
+      |          ^~~~~~~~~
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/selinux.c:4:
+In file included from ./security/selinux/include/objsec.h:27:
+In file included from ./include/net/net_namespace.h:38:
+./include/linux/skbuff.h:3746:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3746:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3746:2: note: insert 'break;' to avoid fall-through
+ 3746 |         case 24: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3748:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3748:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3748:2: note: insert 'break;' to avoid fall-through
+ 3748 |         case 16: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3750:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3750:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3750:2: note: insert 'break;' to avoid fall-through
+ 3750 |         case  8: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3754:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3754:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3754:2: note: insert 'break;' to avoid fall-through
+ 3754 |         case 20: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3756:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+./include/linux/skbuff.h:3756:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3756:2: note: insert 'break;' to avoid fall-through
+ 3756 |         case 12: diffs |= __it_diff(a, b, 64);
+      |         ^
+      |         break; 
+./include/linux/skbuff.h:3758:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+./include/linux/skbuff.h:3758:2: note: insert '__attribute__((fallthrough));' to silence this warning
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/skbuff.h:3758:2: note: insert 'break;' to avoid fall-through
+ 3758 |         case  4: diffs |= __it_diff(a, b, 32);
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/selinux.c:4:
+./security/selinux/include/objsec.h:28:10: fatal error: 'flask.h' file not found
+   28 | #include "flask.h"
+      |          ^~~~~~~~~
+9 warnings and 1 error generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/inode.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.o
+9 warnings and 1 error generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/selinux.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:2:
+./security/selinux/include/security.h:18:10: fatal error: 'flask.h' file not found
+   18 | #include "flask.h"
+      |          ^~~~~~~~~
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:1:
+In file included from ./security/selinux/ss/avtab.h:24:
+./security/selinux/include/security.h:18:10: fatal error: 'flask.h' file not found
+   18 | #include "flask.h"
+      |          ^~~~~~~~~
+1 error generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/sulog/event.o
+1 error generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/sulog/fd.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/sulog/event.c:5:10: fatal error: 'linux/minmax.h' file not found
+    5 | #include <linux/minmax.h>
+      |          ^~~~~~~~~~~~~~~~
+1 error generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/sulog/event.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/perm.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:3:
+In file included from ./include/linux/kallsyms.h:12:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/supercall.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:677:21: error: use of undeclared identifier 'tasklist_lock'; did you mean 'vfs_test_lock'?
+  677 |     write_lock_irq(&tasklist_lock);
+      |                     ^~~~~~~~~~~~~
+      |                     vfs_test_lock
+./include/linux/rwlock.h:103:51: note: expanded from macro 'write_lock_irq'
+  103 | #define write_lock_irq(lock)            _raw_write_lock_irq(lock)
+      |                                                             ^
+./include/linux/rwlock_api_smp.h:64:56: note: expanded from macro '_raw_write_lock_irq'
+   64 | #define _raw_write_lock_irq(lock) __raw_write_lock_irq(lock)
+      |                                                        ^
+./include/linux/fs.h:1196:12: note: 'vfs_test_lock' declared here
+ 1196 | extern int vfs_test_lock(struct file *, struct file_lock *);
+      |            ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:679:30: error: implicit declaration of function 'task_pgrp' [-Werror,-Wimplicit-function-declaration]
+  679 |     struct pid *init_group = task_pgrp(&init_task);
+      |                              ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:679:41: error: use of undeclared identifier 'init_task'; did you mean 'init_stack'?
+  679 |     struct pid *init_group = task_pgrp(&init_task);
+      |                                         ^~~~~~~~~
+      |                                         init_stack
+./include/linux/sched.h:1856:22: note: 'init_stack' declared here
+ 1856 | extern unsigned long init_stack[THREAD_SIZE / sizeof(unsigned long)];
+      |                      ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:682:9: error: implicit declaration of function 'task_session' [-Werror,-Wimplicit-function-declaration]
+  682 |     if (task_session(p) != task_session(&init_task))
+      |         ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:682:9: note: did you mean 'task_session_vnr'?
+./include/linux/sched.h:1566:21: note: 'task_session_vnr' declared here
+ 1566 | static inline pid_t task_session_vnr(struct task_struct *tsk)
+      |                     ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:682:42: error: use of undeclared identifier 'init_task'; did you mean 'init_stack'?
+  682 |     if (task_session(p) != task_session(&init_task))
+      |                                          ^~~~~~~~~
+      |                                          init_stack
+./include/linux/sched.h:1856:22: note: 'init_stack' declared here
+ 1856 | extern unsigned long init_stack[THREAD_SIZE / sizeof(unsigned long)];
+      |                      ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:686:22: warning: comparison between pointer and integer ('int' and 'struct pid *') [-Wpointer-integer-compare]
+  686 |     if (task_pgrp(p) != init_group) {
+      |         ~~~~~~~~~~~~ ^  ~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:695:23: error: use of undeclared identifier 'tasklist_lock'; did you mean 'vfs_test_lock'?
+  695 |     write_unlock_irq(&tasklist_lock);
+      |                       ^~~~~~~~~~~~~
+      |                       vfs_test_lock
+./include/linux/rwlock.h:108:55: note: expanded from macro 'write_unlock_irq'
+  108 | #define write_unlock_irq(lock)          _raw_write_unlock_irq(lock)
+      |                                                               ^
+./include/linux/rwlock_api_smp.h:104:60: note: expanded from macro '_raw_write_unlock_irq'
+  104 | #define _raw_write_unlock_irq(lock) __raw_write_unlock_irq(lock)
+      |                                                            ^
+./include/linux/fs.h:1196:12: note: 'vfs_test_lock' declared here
+ 1196 | extern int vfs_test_lock(struct file *, struct file_lock *);
+      |            ^
+4 warnings and 6 errors generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/adb_root.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/adb_root.c:9:
+In file included from ./include/linux/ptrace.h:7:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/supercall.c:6:
+In file included from ./include/linux/kprobes.h:29:
+In file included from ./include/linux/ftrace.h:11:
+In file included from ./include/linux/kallsyms.h:12:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/adb_root.c:9:
+In file included from ./include/linux/ptrace.h:10:
+In file included from ./include/linux/pid_namespace.h:7:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/supercall.c:6:
+In file included from ./include/linux/kprobes.h:29:
+In file included from ./include/linux/ftrace.h:14:
+In file included from ./include/linux/ptrace.h:7:
+In file included from ./include/linux/sched/signal.h:6:
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  147 | _SIG_SET_BINOP(sigorsets, _sig_or)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:147:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  150 | _SIG_SET_BINOP(sigandsets, _sig_and)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:150:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  153 | _SIG_SET_BINOP(sigandnsets, _sig_andn)
+      | ^
+./include/linux/signal.h:133:2: note: expanded from macro '_SIG_SET_BINOP'
+  133 |         case 2:                                                         \
+      |         ^
+./include/linux/signal.h:153:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:137:2: note: expanded from macro '_SIG_SET_BINOP'
+  137 |         case 1:                                                         \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  177 | _SIG_SET_OP(signotset, _sig_not)
+      | ^
+./include/linux/signal.h:167:2: note: expanded from macro '_SIG_SET_OP'
+  167 |         case 2: set->sig[1] = op(set->sig[1]);                          \
+      |         ^
+./include/linux/signal.h:177:1: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+./include/linux/signal.h:169:2: note: expanded from macro '_SIG_SET_OP'
+  169 |         case 1: set->sig[0] = op(set->sig[0]);                          \
+      |         ^
+./include/linux/signal.h:190:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+./include/linux/signal.h:190:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:190:2: note: insert 'break;' to avoid fall-through
+  190 |         case 1: set->sig[0] = 0;
+      |         ^
+      |         break; 
+./include/linux/signal.h:203:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+./include/linux/signal.h:203:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:203:2: note: insert 'break;' to avoid fall-through
+  203 |         case 1: set->sig[0] = -1;
+      |         ^
+      |         break; 
+./include/linux/signal.h:233:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  233 |         case 1: ;
+      |         ^
+./include/linux/signal.h:233:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  233 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:233:2: note: insert 'break;' to avoid fall-through
+  233 |         case 1: ;
+      |         ^
+      |         break; 
+./include/linux/signal.h:245:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  245 |         case 1: ;
+      |         ^
+./include/linux/signal.h:245:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  245 |         case 1: ;
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/signal.h:245:2: note: insert 'break;' to avoid fall-through
+  245 |         case 1: ;
+      |         ^
+      |         break; 
+15 warnings generated.
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/supercall.c:133:45: error: use of undeclared identifier 'TWA_RESUME'
+  133 |         if (task_work_add(current, &tw->cb, TWA_RESUME)) {
+      |                                             ^
+15 warnings and 1 error generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/supercall.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/selinux_hide.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/shell_su_adb_only.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/selinux_hide.c:5:
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.h:6:
+In file included from ./security/selinux/ss/policydb.h:26:
+In file included from ./security/selinux/ss/avtab.h:24:
+./security/selinux/include/security.h:18:10: fatal error: 'flask.h' file not found
+   18 | #include "flask.h"
+      |          ^~~~~~~~~
+1 error generated.
+make[1]: *** [scripts/Makefile.build:287: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/selinux_hide.o] Error 1
+make[1]: Target '__build' not remade because of errors.
+make: *** [Makefile:1843: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel] Error 2
+make: Target 'modules' not remade because of errors.
+make: Leaving directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'

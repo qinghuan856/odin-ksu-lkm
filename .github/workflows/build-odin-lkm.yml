@@ -1,9 +1,5 @@
 name: Build odin 5.4 kernelsu.ko
 
-# 为 Xiaomi MIX 4 (odin, SM8350, msm-5.4 非 GKI) 编 kernelsu.ko
-#
-# 用法: 把本文件放到仓库的 .github/workflows/ 下, Actions 页面手动 Run workflow,
-#       跑完在 Summary 页底部下载 artifact。
 on:
   workflow_dispatch:
     inputs:
@@ -15,10 +11,6 @@ on:
         description: 'odin 内核分支'
         required: true
         default: 'odin-r-oss'
-      ksu_ref:
-        description: 'KernelSU 分支或 tag'
-        required: true
-        default: 'main'
       config_path:
         description: '内核 config 路径(留空=自动探测)'
         required: false
@@ -35,6 +27,8 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 150
     steps:
+      - uses: actions/checkout@v4
+
       - name: 腾磁盘
         run: |
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
@@ -49,35 +43,15 @@ jobs:
             build-essential bc bison flex libssl-dev libelf-dev cpio python3 \
             gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu \
             clang lld llvm git curl
-          echo "--- gcc ---";   aarch64-linux-gnu-gcc --version | head -1
-          echo "--- clang ---"; clang --version | head -1
+          aarch64-linux-gnu-gcc --version | head -1
+          clang --version | head -1
 
       - name: 克隆 odin 内核
         run: |
           git clone --depth 1 --single-branch -b "${{ inputs.odin_branch }}" \
             https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git odin
-          echo "--- 候选 config ---"
-          find odin/arch/arm64/configs -type f \( -name '*odin*' -o -name 'gki_defconfig' \) | head -30
-          echo "--- 内核版本 ---"
+          find odin/arch/arm64/configs -type f -name '*odin*' | head -20
           head -5 odin/Makefile | grep -E 'VERSION|PATCHLEVEL|SUBLEVEL'
-          du -sh odin
-
-      - name: 克隆 KernelSU
-        run: |
-          git clone --depth 1 -b "${{ inputs.ksu_ref }}" https://github.com/tiann/KernelSU.git ksu
-          echo "--- kernel/Kconfig: KSU 依赖 ---"
-          grep -A4 '^config KSU$' ksu/kernel/Kconfig
-
-      - name: 应用 5.4 兼容补丁
-        run: |
-          set -euo pipefail
-          for p in patches/*.patch; do
-            [ -f "$p" ] || continue
-            echo "==> apply $p"
-            git -C ksu apply -v "$GITHUB_WORKSPACE/$p"
-          done
-          echo "--- 改动确认 ---"
-          git -C ksu diff --stat
 
       - name: 配置内核
         run: |
@@ -94,46 +68,32 @@ jobs:
               [ -f "$c" ] && { CFG="$c"; break; }
             done
           fi
-          if [ -z "$CFG" ] || [ ! -f "$CFG" ]; then
-            echo "::error::没找到 config。请在上面的 candidate 列表里挑一个填进 config_path"
-            exit 1
-          fi
+          [ -n "$CFG" ] && [ -f "$CFG" ] || { echo "::error::没找到 config"; exit 1; }
 
           REL="${CFG#arch/arm64/configs/}"
-          echo "config = $CFG  ->  relative: $REL"
+          echo "config=$CFG rel=$REL"
           case "$REL" in
-            *_defconfig)
-              # 标准 kbuild 目标（含 vendor/ 子目录也支持）
-              make ARCH=arm64 "$REL"
-              ;;
-            *)
-              # odin_QGKI.config 这类不是 *_defconfig，kbuild 没有对应 target，
-              # 直接当 .config 用再 olddefconfig 补齐
-              echo "非 *_defconfig 命名，直接作为 .config 使用"
-              cp "$CFG" .config
-              ;;
+            *_defconfig) make ARCH=arm64 "$REL" ;;
+            *)           cp "$CFG" .config ;;
           esac
 
-          # KernelSU 硬依赖: KPROBES + EXT4_FS；模块加载需要 MODULES + KALLSYMS
-          for opt in KPROBES EXT4_FS MODULES KALLSYMS; do
+          for opt in KPROBES EXT4_FS MODULES KALLSYMS SECCOMP SECCOMP_FILTER; do
             grep -q "^CONFIG_${opt}=y" .config || ./scripts/config --file .config -e "$opt"
           done
           ./scripts/config --file .config -d KSU || true
 
           make ARCH=arm64 olddefconfig
 
-          # 配置完整性校验：万一是拼在 gki_defconfig 上的 fragment，这里会提前暴露
-          for must in CONFIG_ARM64 CONFIG_MODULES CONFIG_KALLSYMS CONFIG_KPROBES; do
-            grep -q "^${must}=y" .config || { echo "::error::配置缺少 ${must}=y，可能这个 config 是 fragment，需要先合 gki_defconfig"; exit 1; }
+          for must in CONFIG_ARM64 CONFIG_MODULES CONFIG_KALLSYMS CONFIG_KPROBES CONFIG_SECCOMP; do
+            grep -q "^${must}=y" .config || { echo "::error::配置缺少 ${must}=y"; exit 1; }
           done
 
           echo "================ 关键配置 ================"
-          grep -E '^CONFIG_(MODULES|MODULE_SIG|MODULE_SIG_FORCE|MODVERSIONS|KPROBES|KALLSYMS|EXT4_FS|ARM64)=' .config || true
+          grep -E '^CONFIG_(MODULES|MODULE_SIG|MODULE_SIG_FORCE|MODVERSIONS|KPROBES|KALLSYMS|EXT4_FS|SECCOMP|SECCOMP_FILTER|SECURITY_SELINUX)=' .config || true
           echo "=========================================="
 
           if grep -q '^CONFIG_MODULE_SIG_FORCE=y' .config; then
-            echo "::error::内核启用了 CONFIG_MODULE_SIG_FORCE；ksuinit 不绕签名，此路不通"
-            exit 1
+            echo "::error::内核启用了 CONFIG_MODULE_SIG_FORCE"; exit 1
           fi
 
       - name: 编译前准备
@@ -142,14 +102,17 @@ jobs:
           cd odin
           make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- prepare
           make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts
-          # Module.symvers 缺失只是 warning；ksuinit 用 /proc/kallsyms 绑未定义符号
           make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- modules_prepare || true
+          make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- security/selinux/ || true
+          echo "--- selinux 生成头 ---"
+          ls -l security/selinux/flask.h security/selinux/av_permissions.h 2>/dev/null || echo "!! 未生成"
 
-      - name: 编译 kernelsu.ko（主选 + 备选编译器自动重试）
+      - name: 编译 kernelsu.ko
         run: |
           set -uo pipefail
           KDIR="$GITHUB_WORKSPACE/odin"
-          MSRC="$GITHUB_WORKSPACE/ksu/kernel"
+          MSRC="$GITHUB_WORKSPACE/ksu-kernel"
+          echo "module src: $MSRC"
 
           build_with() {
             local tag="$1"; shift
@@ -166,22 +129,21 @@ jobs:
             return 1
           }
 
+          CLANG_ARGS=(CC=clang LD=ld.lld AR=llvm-ar NM=llvm-nm
+                      OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
+                      CLANG_TRIPLE=aarch64-linux-gnu-)
+          GCC_ARGS=(CC=aarch64-linux-gnu-gcc LD=aarch64-linux-gnu-ld)
+
           if [ "${{ inputs.first_cc }}" = "clang" ]; then
-            build_with clang CC=clang LD=ld.lld AR=llvm-ar NM=llvm-nm \
-                       OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip \
-                       CLANG_TRIPLE=aarch64-linux-gnu- \
-              || build_with gcc CC=aarch64-linux-gnu-gcc LD=aarch64-linux-gnu-ld
+            build_with clang "${CLANG_ARGS[@]}" || build_with gcc "${GCC_ARGS[@]}"
           else
-            build_with gcc CC=aarch64-linux-gnu-gcc LD=aarch64-linux-gnu-ld \
-              || build_with clang CC=clang LD=ld.lld AR=llvm-ar NM=llvm-nm \
-                       OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip \
-                       CLANG_TRIPLE=aarch64-linux-gnu-
+            build_with gcc "${GCC_ARGS[@]}" || build_with clang "${CLANG_ARGS[@]}"
           fi
 
           if [ ! -f .build-result ]; then
-            echo "::error::两种编译器都失败了，看 build-*.log 里的第一条 error"
-            echo "===== gcc 首次报错 =====";  grep -m5 -E 'error:|Error [0-9]' build-gcc.log   2>/dev/null || true
-            echo "===== clang 首次报错 ====="; grep -m5 -E 'error:|Error [0-9]' build-clang.log 2>/dev/null || true
+            echo "::error::编译失败"
+            echo "===== 去重后的错误 ====="
+            grep -hE "error:" build-*.log | sed 's|.*/ksu-kernel/||' | sort -u | head -40
             exit 1
           fi
           cat .build-result
@@ -191,23 +153,18 @@ jobs:
         run: |
           set -uo pipefail
           mkdir -p out
-          KO="ksu/kernel/kernelsu.ko"
+          KO="ksu-kernel/kernelsu.ko"
           if [ -f "$KO" ]; then
             OUT="out/${{ inputs.kmi_name }}_kernelsu.ko"
             cp "$KO" "$OUT"
             llvm-strip -d "$OUT" 2>/dev/null || true
-            echo "==================== 产物 ===================="
             ls -l "$OUT"
             file "$OUT" || true
-            echo "--- ELF 类型（应为 ET_REL）---"
             readelf -h "$OUT" | grep -E 'Type|Machine' || true
-            echo "--- vermagic（缺失正常，ksuinit 会改写）---"
-            strings -a "$OUT" | grep -m1 '^vermagic=' || echo "(无)"
-            echo "--- 未定义符号（ksuinit 用 /proc/kallsyms 绑定）---"
+            strings -a "$OUT" | grep -m1 '^vermagic=' || echo "(no vermagic, ksuinit 会补)"
             readelf -sW "$OUT" | awk '$7=="UND"{print $8}' | grep -v '^$' | sort -u | tee out/undefined-symbols.txt | wc -l
-            echo "=============================================="
           else
-            echo "::warning::没有产出 kernelsu.ko，见日志"
+            echo "::warning::没有产出 kernelsu.ko"
           fi
 
       - name: 上传

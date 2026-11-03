@@ -1,0 +1,289 @@
+make: Entering directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/Kbuild:126: -- KernelSU: ./usr/include not found, preinit disabled
+
+  WARNING: Symbol version dump ./Module.symvers
+           is missing; modules will have no dependencies and modversions.
+
+-- KernelSU: Git repo detected at /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu
+-- KernelSU version: 32716
+-- KSU_NEW_DCACHE_FLUSH: 0
+-- KernelSU Manager package name: me.weishu.kernelsu
+-- KernelSU Manager signature size: 0x033b
+-- KernelSU Manager signature hash: c371061b19d8c7d7d6133c6a9bafe198fa944e50c1b31c9d8daa8d7f1fc2d2d6
+-- KernelSU is PR Build: 0
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/core/init.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/kernel_umount.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/module_blacklist.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sulog.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/lsm_hook.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.c:8:10: fatal error: linux/pgtable.h: No such file or directory
+    8 | #include <linux/pgtable.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/syscall_event_bridge.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c: In function ‘ksu_handle_setresuid’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:30:49: error: ‘struct seccomp’ has no member named ‘filter’
+   30 |         ksu_seccomp_allow_cache(current->seccomp.filter, __NR_reboot);
+      |                                                 ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:30:58: error: ‘__NR_reboot’ undeclared (first use in this function)
+   30 |         ksu_seccomp_allow_cache(current->seccomp.filter, __NR_reboot);
+      |                                                          ^~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:30:58: note: each undeclared identifier is reported only once for each function it appears in
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:39:29: error: ‘struct seccomp’ has no member named ‘mode’
+   39 |         if (current->seccomp.mode == SECCOMP_MODE_FILTER && current->seccomp.filter) {
+      |                             ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:39:77: error: ‘struct seccomp’ has no member named ‘filter’
+   39 |         if (current->seccomp.mode == SECCOMP_MODE_FILTER && current->seccomp.filter) {
+      |                                                                             ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.c:41:53: error: ‘struct seccomp’ has no member named ‘filter’
+   41 |             ksu_seccomp_allow_cache(current->seccomp.filter, __NR_reboot);
+      |                                                     ^
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/syscall_hook_manager.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/tp_marker.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/patch_memory.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/syscall_hook.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/patch_memory.c: In function ‘ksu_patch_text_nosync’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/patch_memory.c:139:16: error: implicit declaration of function ‘copy_to_kernel_nofault’ [-Werror=implicit-function-declaration]
+  139 |     ret = (int)copy_to_kernel_nofault(map, src, len);
+      |                ^~~~~~~~~~~~~~~~~~~~~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+cc1: some warnings being treated as errors
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/patch_memory.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/file_wrapper.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/event_queue.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/file_wrapper.c:16:
+./security/selinux/include/objsec.h:28:10: fatal error: flask.h: No such file or directory
+   28 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/file_wrapper.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/su_mount_ns.o
+In file included from ./include/linux/cache.h:5,
+                 from ./include/linux/printk.h:9,
+                 from ./include/linux/kernel.h:15,
+                 from ./include/linux/list.h:9,
+                 from ./include/linux/wait.h:7,
+                 from ./include/linux/wait_bit.h:8,
+                 from ./include/linux/fs.h:6,
+                 from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:2:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:12:34: error: ‘SECCOMP_ARCH_NATIVE_NR’ undeclared here (not in a function)
+   12 |     DECLARE_BITMAP(allow_native, SECCOMP_ARCH_NATIVE_NR);
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~
+./include/uapi/linux/kernel.h:13:40: note: in definition of macro ‘__KERNEL_DIV_ROUND_UP’
+   13 | #define __KERNEL_DIV_ROUND_UP(n, d) (((n) + (d) - 1) / (d))
+      |                                        ^
+./include/linux/types.h:11:28: note: in expansion of macro ‘BITS_TO_LONGS’
+   11 |         unsigned long name[BITS_TO_LONGS(bits)]
+      |                            ^~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:12:5: note: in expansion of macro ‘DECLARE_BITMAP’
+   12 |     DECLARE_BITMAP(allow_native, SECCOMP_ARCH_NATIVE_NR);
+      |     ^~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:18:8: error: redefinition of ‘struct seccomp_filter’
+   18 | struct seccomp_filter {
+      |        ^~~~~~~~~~~~~~
+In file included from ./include/linux/sched.h:21,
+                 from ./include/linux/ioprio.h:5,
+                 from ./include/linux/fs.h:39:
+./include/linux/seccomp.h:59:8: note: originally defined here
+   59 | struct seccomp_filter { };
+      |        ^~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:33:6: error: conflicting types for ‘ksu_seccomp_clear_cache’; have ‘void(struct seccomp_filter *, int)’
+   33 | void ksu_seccomp_clear_cache(struct seccomp_filter *filter, int nr)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:9:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.h:7:13: note: previous declaration of ‘ksu_seccomp_clear_cache’ with type ‘void(struct seccomp_filter *, int)’
+    7 | extern void ksu_seccomp_clear_cache(struct seccomp_filter *filter, int nr);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.c:50:6: error: conflicting types for ‘ksu_seccomp_allow_cache’; have ‘void(struct seccomp_filter *, int)’
+   50 | void ksu_seccomp_allow_cache(struct seccomp_filter *filter, int nr)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.h:8:13: note: previous declaration of ‘ksu_seccomp_allow_cache’ with type ‘void(struct seccomp_filter *, int)’
+    8 | extern void ksu_seccomp_allow_cache(struct seccomp_filter *filter, int nr);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/symbol_resolver.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/apk_sign.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.c: In function ‘ksu_defer_track_throne’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.c:48:45: error: ‘TWA_RESUME’ undeclared (first use in this function)
+   48 |             if (!task_work_add(current, cb, TWA_RESUME))
+      |                                             ^~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.c:48:45: note: each undeclared identifier is reported only once for each function it appears in
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.c: At top level:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.c:72:6: error: ‘const struct fsnotify_ops’ has no member named ‘handle_inode_event’; did you mean ‘handle_event’?
+   72 |     .handle_inode_event = ksu_handle_inode_event,
+      |      ^~~~~~~~~~~~~~~~~~
+      |      handle_event
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.c:72:27: error: initialization of ‘int (*)(struct fsnotify_group *, struct inode *, u32,  const void *, int,  const struct qstr *, u32,  struct fsnotify_iter_info *)’ {aka ‘int (*)(struct fsnotify_group *, struct inode *, unsigned int,  const void *, int,  const struct qstr *, unsigned int,  struct fsnotify_iter_info *)’} from incompatible pointer type ‘int (*)(struct fsnotify_mark *, u32,  struct inode *, struct inode *, const struct qstr *, u32)’ {aka ‘int (*)(struct fsnotify_mark *, unsigned int,  struct inode *, struct inode *, const struct qstr *, unsigned int)’} [-Werror=incompatible-pointer-types]
+   72 |     .handle_inode_event = ksu_handle_inode_event,
+      |                           ^~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.c:72:27: note: (near initialization for ‘ksu_ops.handle_event’)
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+cc1: some warnings being treated as errors
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/throne_tracker.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/allowlist.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/allowlist.c: In function ‘ksu_persistent_allow_list’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/allowlist.c:465:32: error: ‘TWA_RESUME’ undeclared (first use in this function)
+  465 |     if (task_work_add(tsk, cb, TWA_RESUME)) {
+      |                                ^~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/allowlist.c:465:32: note: each undeclared identifier is reported only once for each function it appears in
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/allowlist.c:471:5: error: implicit declaration of function ‘put_task_struct’ [-Werror=implicit-function-declaration]
+  471 |     put_task_struct(tsk);
+      |     ^~~~~~~~~~~~~~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+cc1: some warnings being treated as errors
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/allowlist.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/feature.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/boot_event.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.c: In function ‘disable_seccomp’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.c:102:21: error: ‘struct seccomp’ has no member named ‘mode’
+  102 |     current->seccomp.mode = 0;
+      |                     ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.c:103:21: error: ‘struct seccomp’ has no member named ‘filter’
+  103 |     current->seccomp.filter = NULL;
+      |                     ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.c:104:33: error: ‘struct seccomp’ has no member named ‘filter_count’
+  104 |     atomic_set(&current->seccomp.filter_count, 0);
+      |                                 ^
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/btf_parser.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/inode.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.c: In function ‘check_argv’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.c:140:9: error: implicit declaration of function ‘strncpy_from_user_nofault’; did you mean ‘strncpy_from_user’? [-Werror=implicit-function-declaration]
+  140 |     if (strncpy_from_user_nofault(buf, p, buf_len) <= 0)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+      |         strncpy_from_user
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.c: In function ‘ksu_sys_fstat’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.c:604:14: error: implicit declaration of function ‘copy_from_user_nofault’; did you mean ‘copy_from_iter_nocache’? [-Werror=implicit-function-declaration]
+  604 |         if (!copy_from_user_nofault(&size, st_size_ptr, sizeof(long))) {
+      |              ^~~~~~~~~~~~~~~~~~~~~~
+      |              copy_from_iter_nocache
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.c:607:18: error: implicit declaration of function ‘copy_to_user_nofault’ [-Werror=implicit-function-declaration]
+  607 |             if (!copy_to_user_nofault(st_size_ptr, &new_size, sizeof(long))) {
+      |                  ^~~~~~~~~~~~~~~~~~~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+cc1: some warnings being treated as errors
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/selinux.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/inode.c:6:
+./security/selinux/include/objsec.h:28:10: fatal error: flask.h: No such file or directory
+   28 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/inode.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:2:
+./security/selinux/include/security.h:18:10: fatal error: flask.h: No such file or directory
+   18 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/selinux.c:4:
+./security/selinux/include/objsec.h:28:10: fatal error: flask.h: No such file or directory
+   28 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+In file included from ./security/selinux/ss/avtab.h:24,
+                 from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:1:
+./security/selinux/include/security.h:18:10: fatal error: flask.h: No such file or directory
+   18 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/selinux.o] Error 1
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/sulog/event.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/sulog/fd.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/sulog/event.c:5:10: fatal error: linux/minmax.h: No such file or directory
+    5 | #include <linux/minmax.h>
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/sulog/event.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/perm.o
+In file included from ./include/linux/spinlock_api_smp.h:190,
+                 from ./include/linux/spinlock.h:316,
+                 from ./include/linux/wait.h:9,
+                 from ./include/linux/sysctl.h:27,
+                 from ./include/linux/key.h:17,
+                 from ./include/linux/cred.h:13,
+                 from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:2:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c: In function ‘do_set_init_pgrp’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:677:21: error: ‘tasklist_lock’ undeclared (first use in this function)
+  677 |     write_lock_irq(&tasklist_lock);
+      |                     ^~~~~~~~~~~~~
+./include/linux/rwlock_api_smp.h:64:56: note: in definition of macro ‘_raw_write_lock_irq’
+   64 | #define _raw_write_lock_irq(lock) __raw_write_lock_irq(lock)
+      |                                                        ^~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:677:5: note: in expansion of macro ‘write_lock_irq’
+  677 |     write_lock_irq(&tasklist_lock);
+      |     ^~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:677:21: note: each undeclared identifier is reported only once for each function it appears in
+  677 |     write_lock_irq(&tasklist_lock);
+      |                     ^~~~~~~~~~~~~
+./include/linux/rwlock_api_smp.h:64:56: note: in definition of macro ‘_raw_write_lock_irq’
+   64 | #define _raw_write_lock_irq(lock) __raw_write_lock_irq(lock)
+      |                                                        ^~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:677:5: note: in expansion of macro ‘write_lock_irq’
+  677 |     write_lock_irq(&tasklist_lock);
+      |     ^~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:679:30: error: implicit declaration of function ‘task_pgrp’; did you mean ‘task_curr’? [-Werror=implicit-function-declaration]
+  679 |     struct pid *init_group = task_pgrp(&init_task);
+      |                              ^~~~~~~~~
+      |                              task_curr
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:679:41: error: ‘init_task’ undeclared (first use in this function); did you mean ‘init_stack’?
+  679 |     struct pid *init_group = task_pgrp(&init_task);
+      |                                         ^~~~~~~~~
+      |                                         init_stack
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:682:9: error: implicit declaration of function ‘task_session’; did you mean ‘task_session_vnr’? [-Werror=implicit-function-declaration]
+  682 |     if (task_session(p) != task_session(&init_task))
+      |         ^~~~~~~~~~~~
+      |         task_session_vnr
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/supercall.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.c:686:22: warning: comparison between pointer and integer
+  686 |     if (task_pgrp(p) != init_group) {
+      |                      ^~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+cc1: some warnings being treated as errors
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/adb_root.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/supercall.c: In function ‘reboot_handler_pre’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/supercall.c:133:45: error: ‘TWA_RESUME’ undeclared (first use in this function)
+  133 |         if (task_work_add(current, &tw->cb, TWA_RESUME)) {
+      |                                             ^~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/supercall.c:133:45: note: each undeclared identifier is reported only once for each function it appears in
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/supercall.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/selinux_hide.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/shell_su_adb_only.o
+In file included from ./security/selinux/ss/avtab.h:24,
+                 from ./security/selinux/ss/policydb.h:26,
+                 from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.h:6,
+                 from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/selinux_hide.c:5:
+./security/selinux/include/security.h:18:10: fatal error: flask.h: No such file or directory
+   18 | #include "flask.h"
+      |          ^~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/selinux_hide.o] Error 1
+make[1]: Target '__build' not remade because of errors.
+make: *** [Makefile:1843: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel] Error 2
+make: Target 'modules' not remade because of errors.
+make: Leaving directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'
