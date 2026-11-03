@@ -78,12 +78,17 @@ jobs:
           esac
 
           for opt in KPROBES EXT4_FS MODULES KALLSYMS SECCOMP SECCOMP_FILTER \
-                     SECURITY SECURITY_NETWORK SECURITY_SELINUX; do
+                     AUDIT SECURITY SECURITY_NETWORK SECURITY_SELINUX; do
             grep -q "^CONFIG_${opt}=y" .config || ./scripts/config --file .config -e "$opt"
           done
           ./scripts/config --file .config -d KSU || true
 
           make ARCH=arm64 olddefconfig
+
+          echo "--- SECURITY_SELINUX 依赖 ---"
+          sed -n '/^config SECURITY_SELINUX$/,/^config /p' security/selinux/Kconfig 2>/dev/null | head -12
+          echo "--- 依赖项当前状态 ---"
+          grep -E '^CONFIG_(AUDIT|AUDITSYSCALL|NET|INET|SECURITY_NETWORK|SECURITY_SELINUX)=' .config || echo "(缺)"
 
           for must in CONFIG_ARM64 CONFIG_MODULES CONFIG_KALLSYMS CONFIG_KPROBES CONFIG_SECCOMP; do
             grep -q "^${must}=y" .config || { echo "::error::配置缺少 ${must}=y"; exit 1; }
@@ -109,7 +114,9 @@ jobs:
           make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- modules_prepare || true
           make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- security/selinux/ || true
           if [ ! -f security/selinux/flask.h ]; then
-            make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts/selinux/genheaders/ || true
+            make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts/selinux/genheaders/genheaders 2>/dev/null || true
+            make -j"$(nproc)" -C scripts/selinux/genheaders 2>/dev/null || true
+            make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts || true
             GEN=$(find "$(pwd)" -type f -name genheaders -perm -u+x | head -1)
             echo "genheaders=$GEN"
             if [ -n "$GEN" ]; then
