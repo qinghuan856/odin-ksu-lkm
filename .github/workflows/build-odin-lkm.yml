@@ -1,0 +1,210 @@
+name: Build odin 5.4 kernelsu.ko
+
+# 为 Xiaomi MIX 4 (odin, SM8350, msm-5.4 非 GKI) 编 kernelsu.ko
+#
+# 用法: 把本文件放到仓库的 .github/workflows/ 下, Actions 页面手动 Run workflow,
+#       跑完在 Summary 页底部下载 artifact。
+on:
+  workflow_dispatch:
+    inputs:
+      kmi_name:
+        description: 'ko 名字, 要和 ksud late-load --kmi 一致'
+        required: true
+        default: 'android11-5.4'
+      odin_branch:
+        description: 'odin 内核分支'
+        required: true
+        default: 'odin-r-oss'
+      ksu_ref:
+        description: 'KernelSU 分支或 tag'
+        required: true
+        default: 'main'
+      config_path:
+        description: '内核 config 路径(留空=自动探测)'
+        required: false
+        default: ''
+      first_cc:
+        description: '首选编译器'
+        required: true
+        type: choice
+        options: ['clang', 'gcc']
+        default: 'clang'
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 150
+    steps:
+      - name: 腾磁盘
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
+                      /opt/hostedtoolcache/CodeQL /usr/local/.ghcup 2>/dev/null || true
+          sudo apt-get clean
+          df -h /
+
+      - name: 装依赖
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            build-essential bc bison flex libssl-dev libelf-dev cpio python3 \
+            gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu \
+            clang lld llvm git curl
+          echo "--- gcc ---";   aarch64-linux-gnu-gcc --version | head -1
+          echo "--- clang ---"; clang --version | head -1
+
+      - name: 克隆 odin 内核
+        run: |
+          git clone --depth 1 --single-branch -b "${{ inputs.odin_branch }}" \
+            https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git odin
+          echo "--- 候选 config ---"
+          find odin/arch/arm64/configs -type f \( -name '*odin*' -o -name 'gki_defconfig' \) | head -30
+          echo "--- 内核版本 ---"
+          head -5 odin/Makefile | grep -E 'VERSION|PATCHLEVEL|SUBLEVEL'
+          du -sh odin
+
+      - name: 克隆 KernelSU
+        run: |
+          git clone --depth 1 -b "${{ inputs.ksu_ref }}" https://github.com/tiann/KernelSU.git ksu
+          echo "--- kernel/Kconfig: KSU 依赖 ---"
+          grep -A4 '^config KSU$' ksu/kernel/Kconfig
+
+      - name: 配置内核
+        run: |
+          set -euo pipefail
+          cd odin
+
+          CFG="${{ inputs.config_path }}"
+          if [ -z "$CFG" ]; then
+            for c in arch/arm64/configs/vendor/odin_QGKI.config \
+                     arch/arm64/configs/vendor/odin_defconfig \
+                     arch/arm64/configs/odin_QGKI.config \
+                     arch/arm64/configs/odin_defconfig \
+                     arch/arm64/configs/vendor/odin-perf_defconfig; do
+              [ -f "$c" ] && { CFG="$c"; break; }
+            done
+          fi
+          if [ -z "$CFG" ] || [ ! -f "$CFG" ]; then
+            echo "::error::没找到 config。请在上面的 candidate 列表里挑一个填进 config_path"
+            exit 1
+          fi
+
+          REL="${CFG#arch/arm64/configs/}"
+          echo "config = $CFG  ->  relative: $REL"
+          case "$REL" in
+            *_defconfig)
+              # 标准 kbuild 目标（含 vendor/ 子目录也支持）
+              make ARCH=arm64 "$REL"
+              ;;
+            *)
+              # odin_QGKI.config 这类不是 *_defconfig，kbuild 没有对应 target，
+              # 直接当 .config 用再 olddefconfig 补齐
+              echo "非 *_defconfig 命名，直接作为 .config 使用"
+              cp "$CFG" .config
+              ;;
+          esac
+
+          # KernelSU 硬依赖: KPROBES + EXT4_FS；模块加载需要 MODULES + KALLSYMS
+          for opt in KPROBES EXT4_FS MODULES KALLSYMS; do
+            grep -q "^CONFIG_${opt}=y" .config || ./scripts/config --file .config -e "$opt"
+          done
+          ./scripts/config --file .config -d KSU || true
+
+          make ARCH=arm64 olddefconfig
+
+          # 配置完整性校验：万一是拼在 gki_defconfig 上的 fragment，这里会提前暴露
+          for must in CONFIG_ARM64 CONFIG_MODULES CONFIG_KALLSYMS CONFIG_KPROBES; do
+            grep -q "^${must}=y" .config || { echo "::error::配置缺少 ${must}=y，可能这个 config 是 fragment，需要先合 gki_defconfig"; exit 1; }
+          done
+
+          echo "================ 关键配置 ================"
+          grep -E '^CONFIG_(MODULES|MODULE_SIG|MODULE_SIG_FORCE|MODVERSIONS|KPROBES|KALLSYMS|EXT4_FS|ARM64)=' .config || true
+          echo "=========================================="
+
+          if grep -q '^CONFIG_MODULE_SIG_FORCE=y' .config; then
+            echo "::error::内核启用了 CONFIG_MODULE_SIG_FORCE；ksuinit 不绕签名，此路不通"
+            exit 1
+          fi
+
+      - name: 编译前准备
+        run: |
+          set -euo pipefail
+          cd odin
+          make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- prepare
+          make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts
+          # Module.symvers 缺失只是 warning；ksuinit 用 /proc/kallsyms 绑未定义符号
+          make -j"$(nproc)" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- modules_prepare || true
+
+      - name: 编译 kernelsu.ko（主选 + 备选编译器自动重试）
+        run: |
+          set -uo pipefail
+          KDIR="$GITHUB_WORKSPACE/odin"
+          MSRC="$GITHUB_WORKSPACE/ksu/kernel"
+
+          build_with() {
+            local tag="$1"; shift
+            echo "=== 尝试编译: $tag ==="
+            make -j"$(nproc)" -C "$KDIR" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \
+                 "$@" M="$MSRC" CONFIG_KSU=m modules 2>&1 | tee "build-$tag.log"
+            local rc=${PIPESTATUS[0]}
+            echo "退出码: $rc"
+            if [ "$rc" -eq 0 ] && [ -f "$MSRC/kernelsu.ko" ]; then
+              echo "OK:$tag" > .build-result
+              return 0
+            fi
+            rm -f "$MSRC/kernelsu.ko"
+            return 1
+          }
+
+          if [ "${{ inputs.first_cc }}" = "clang" ]; then
+            build_with clang CC=clang LD=ld.lld AR=llvm-ar NM=llvm-nm \
+                       OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip \
+                       CLANG_TRIPLE=aarch64-linux-gnu- \
+              || build_with gcc CC=aarch64-linux-gnu-gcc LD=aarch64-linux-gnu-ld
+          else
+            build_with gcc CC=aarch64-linux-gnu-gcc LD=aarch64-linux-gnu-ld \
+              || build_with clang CC=clang LD=ld.lld AR=llvm-ar NM=llvm-nm \
+                       OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip \
+                       CLANG_TRIPLE=aarch64-linux-gnu-
+          fi
+
+          if [ ! -f .build-result ]; then
+            echo "::error::两种编译器都失败了，看 build-*.log 里的第一条 error"
+            echo "===== gcc 首次报错 =====";  grep -m5 -E 'error:|Error [0-9]' build-gcc.log   2>/dev/null || true
+            echo "===== clang 首次报错 ====="; grep -m5 -E 'error:|Error [0-9]' build-clang.log 2>/dev/null || true
+            exit 1
+          fi
+          cat .build-result
+
+      - name: 打包产物
+        if: always()
+        run: |
+          set -uo pipefail
+          mkdir -p out
+          KO="ksu/kernel/kernelsu.ko"
+          if [ -f "$KO" ]; then
+            OUT="out/${{ inputs.kmi_name }}_kernelsu.ko"
+            cp "$KO" "$OUT"
+            llvm-strip -d "$OUT" 2>/dev/null || true
+            echo "==================== 产物 ===================="
+            ls -l "$OUT"
+            file "$OUT" || true
+            echo "--- ELF 类型（应为 ET_REL）---"
+            readelf -h "$OUT" | grep -E 'Type|Machine' || true
+            echo "--- vermagic（缺失正常，ksuinit 会改写）---"
+            strings -a "$OUT" | grep -m1 '^vermagic=' || echo "(无)"
+            echo "--- 未定义符号（ksuinit 用 /proc/kallsyms 绑定）---"
+            readelf -sW "$OUT" | awk '$7=="UND"{print $8}' | grep -v '^$' | sort -u | tee out/undefined-symbols.txt | wc -l
+            echo "=============================================="
+          else
+            echo "::warning::没有产出 kernelsu.ko，见日志"
+          fi
+
+      - name: 上传
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kernelsu-ko-${{ inputs.kmi_name }}
+          path: |
+            out/*
+            build-*.log
+          if-no-files-found: warn
