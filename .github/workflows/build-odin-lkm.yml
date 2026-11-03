@@ -68,6 +68,17 @@ jobs:
           echo "--- kernel/Kconfig: KSU 依赖 ---"
           grep -A4 '^config KSU$' ksu/kernel/Kconfig
 
+      - name: 应用 5.4 兼容补丁
+        run: |
+          set -euo pipefail
+          for p in patches/*.patch; do
+            [ -f "$p" ] || continue
+            echo "==> apply $p"
+            git -C ksu apply -v "$GITHUB_WORKSPACE/$p"
+          done
+          echo "--- 改动确认 ---"
+          git -C ksu diff --stat
+
       - name: 配置内核
         run: |
           set -euo pipefail
@@ -143,7 +154,7 @@ jobs:
           build_with() {
             local tag="$1"; shift
             echo "=== 尝试编译: $tag ==="
-            make -j"$(nproc)" -C "$KDIR" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \
+            make -j"$(nproc)" -k -C "$KDIR" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \
                  "$@" M="$MSRC" CONFIG_KSU=m modules 2>&1 | tee "build-$tag.log"
             local rc=${PIPESTATUS[0]}
             echo "退出码: $rc"

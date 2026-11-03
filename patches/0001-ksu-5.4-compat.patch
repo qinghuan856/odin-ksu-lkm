@@ -1,0 +1,94 @@
+diff --git a/kernel/feature/kernel_umount.c b/kernel/feature/kernel_umount.c
+index 7e337ab..081d10a 100644
+--- a/kernel/feature/kernel_umount.c
++++ b/kernel/feature/kernel_umount.c
+@@ -41,6 +41,8 @@ static const struct ksu_feature_handler kernel_umount_handler = {
+     .set_handler = kernel_umount_feature_set,
+ };
+ 
++#include <linux/version.h>
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 9, 0)
+ extern int path_umount(struct path *path, int flags);
+ 
+ static void ksu_umount_mnt(const char *mnt, struct path *path, int flags)
+@@ -50,6 +52,15 @@ static void ksu_umount_mnt(const char *mnt, struct path *path, int flags)
+         pr_info("umount %s failed: %d\n", mnt, err);
+     }
+ }
++#else
++/* < 5.9 无 path_umount；官方文档要求自行 backport，未 backport 时该特性不生效 */
++static void ksu_umount_mnt(const char *mnt, struct path *path, int flags)
++{
++    pr_info_once("kernel_umount: path_umount unavailable, skip %s\n", mnt);
++    (void)path;
++    (void)flags;
++}
++#endif
+ 
+ static void try_umount(const char *mnt, int flags)
+ {
+diff --git a/kernel/feature/sucompat.c b/kernel/feature/sucompat.c
+index 003f86b..2e941f2 100644
+--- a/kernel/feature/sucompat.c
++++ b/kernel/feature/sucompat.c
+@@ -5,7 +5,12 @@
+ #include <linux/preempt.h>
+ #include <linux/printk.h>
+ #include <linux/mm.h>
++#include <linux/version.h>
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 8, 0)
+ #include <linux/pgtable.h>
++#else
++#include <asm/pgtable.h>
++#endif
+ #include <linux/uaccess.h>
+ #include <asm/current.h>
+ #include <linux/cred.h>
+diff --git a/kernel/manager/pkg_observer.c b/kernel/manager/pkg_observer.c
+index dc785e3..6724625 100644
+--- a/kernel/manager/pkg_observer.c
++++ b/kernel/manager/pkg_observer.c
+@@ -8,6 +8,11 @@
+ #include <linux/rculist.h>
+ #include <linux/task_work.h>
+ #include <linux/version.h>
++#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 8, 0)
++/* 5.4: task_work_add(task, twork, bool notify)；true 等价于 TWA_RESUME */
++#define TWA_RESUME true
++#endif
++#include <linux/version.h>
+ #include "klog.h" // IWYU pragma: keep
+ #include "manager/throne_tracker.h"
+ 
+diff --git a/kernel/policy/allowlist.c b/kernel/policy/allowlist.c
+index 33cb509..01736e8 100644
+--- a/kernel/policy/allowlist.c
++++ b/kernel/policy/allowlist.c
+@@ -3,6 +3,11 @@
+ #include <linux/rculist.h>
+ #include <linux/mutex.h>
+ #include <linux/task_work.h>
++#include <linux/version.h>
++#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 8, 0)
++/* 5.4: task_work_add(task, twork, bool notify)；true 等价于 TWA_RESUME */
++#define TWA_RESUME true
++#endif
+ #include <linux/capability.h>
+ #include <linux/compiler.h>
+ #include <linux/fs.h>
+diff --git a/kernel/supercall/supercall.c b/kernel/supercall/supercall.c
+index 6db2649..6d597ae 100644
+--- a/kernel/supercall/supercall.c
++++ b/kernel/supercall/supercall.c
+@@ -8,6 +8,11 @@
+ #include <linux/slab.h>
+ #include <linux/syscalls.h>
+ #include <linux/task_work.h>
++#include <linux/version.h>
++#if LINUX_VERSION_CODE < KERNEL_VERSION(5, 8, 0)
++/* 5.4: task_work_add(task, twork, bool notify)；true 等价于 TWA_RESUME */
++#define TWA_RESUME true
++#endif
+ #include <linux/uaccess.h>
+ #include <linux/version.h>
+ 

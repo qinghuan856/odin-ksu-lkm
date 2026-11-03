@@ -1,0 +1,135 @@
+make: Entering directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/Kbuild:126: -- KernelSU: ./usr/include not found, preinit disabled
+
+  WARNING: Symbol version dump ./Module.symvers
+           is missing; modules will have no dependencies and modversions.
+
+-- KernelSU: Git repo detected at /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu
+-- KernelSU version: 32716
+-- KSU_NEW_DCACHE_FLUSH: 0
+-- KernelSU Manager package name: me.weishu.kernelsu
+-- KernelSU Manager signature size: 0x033b
+-- KernelSU Manager signature hash: c371061b19d8c7d7d6133c6a9bafe198fa944e50c1b31c9d8daa8d7f1fc2d2d6
+-- KernelSU is PR Build: 0
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/core/init.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/kernel_umount.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/core/init.c:17:
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/lsm_hook.h:4:
+In file included from ./include/linux/lsm_hooks.h:28:
+In file included from ./include/linux/security.h:32:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+3 warnings generated.
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/module_blacklist.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sulog.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/lsm_hook.o
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.c:7:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/lsm_hook.c:3:
+In file included from ./include/linux/kallsyms.h:12:
+./include/linux/mm.h:172:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  172 |         case 72:
+      |         ^
+./include/linux/mm.h:172:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  172 |         case 72:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:172:2: note: insert 'break;' to avoid fall-through
+  172 |         case 72:
+      |         ^
+      |         break; 
+./include/linux/mm.h:174:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  174 |         case 64:
+      |         ^
+./include/linux/mm.h:174:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  174 |         case 64:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:174:2: note: insert 'break;' to avoid fall-through
+  174 |         case 64:
+      |         ^
+      |         break; 
+./include/linux/mm.h:176:2: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  176 |         case 56:
+      |         ^
+./include/linux/mm.h:176:2: note: insert '__attribute__((fallthrough));' to silence this warning
+  176 |         case 56:
+      |         ^
+      |         __attribute__((fallthrough)); 
+./include/linux/mm.h:176:2: note: insert 'break;' to avoid fall-through
+  176 |         case 56:
+      |         ^
+      |         break; 
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.c:8:10: fatal error: 'linux/pgtable.h' file not found
+    8 | #include <linux/pgtable.h>
+      |          ^~~~~~~~~~~~~~~~~
+3 warnings generated.
+3 warnings and 1 error generated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.o] Error 1
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:1843: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel] Error 2
+make: Leaving directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'

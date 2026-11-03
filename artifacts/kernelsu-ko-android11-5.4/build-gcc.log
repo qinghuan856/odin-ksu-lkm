@@ -1,0 +1,27 @@
+make: Entering directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/Kbuild:126: -- KernelSU: ./usr/include not found, preinit disabled
+
+  WARNING: Symbol version dump ./Module.symvers
+           is missing; modules will have no dependencies and modversions.
+
+-- KernelSU: Git repo detected at /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu
+-- KernelSU version: 32716
+-- KSU_NEW_DCACHE_FLUSH: 0
+-- KernelSU Manager package name: me.weishu.kernelsu
+-- KernelSU Manager signature size: 0x033b
+-- KernelSU Manager signature hash: c371061b19d8c7d7d6133c6a9bafe198fa944e50c1b31c9d8daa8d7f1fc2d2d6
+-- KernelSU is PR Build: 0
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/core/init.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/kernel_umount.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/module_blacklist.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sulog.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/lsm_hook.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.c:8:10: fatal error: linux/pgtable.h: No such file or directory
+    8 | #include <linux/pgtable.h>
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.o] Error 1
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:1843: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel] Error 2
+make: Leaving directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'
