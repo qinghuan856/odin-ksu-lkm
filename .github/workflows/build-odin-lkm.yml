@@ -101,6 +101,8 @@ jobs:
             grep -q "^CONFIG_${opt}=y" .config || ./scripts/config --file .config -e "$opt"
           done
           ./scripts/config --file .config -d KSU || true
+          # 5.4 Makefile 给 clang 传的 -enable-trivial-auto-var-init-zero... 已被新版 clang 删除
+          ./scripts/config --file .config -d INIT_STACK_ALL_ZERO -d INIT_STACK_ALL -e INIT_STACK_NONE || true
 
           make ARCH=arm64 olddefconfig
 
