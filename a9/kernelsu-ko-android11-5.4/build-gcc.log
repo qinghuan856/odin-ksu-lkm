@@ -1,0 +1,453 @@
+make: Entering directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/Kbuild:127: -- KernelSU: ./usr/include not found, preinit disabled
+
+  WARNING: Symbol version dump ./Module.symvers
+           is missing; modules will have no dependencies and modversions.
+
+-- KernelSU: Git repo detected at /home/runner/work/odin-ksu-lkm/odin-ksu-lkm
+-- KernelSU version: 30009
+-- KSU_NEW_DCACHE_FLUSH: 0
+-- KernelSU Manager package name: me.weishu.kernelsu
+-- KernelSU Manager signature size: 0x033b
+-- KernelSU Manager signature hash: c371061b19d8c7d7d6133c6a9bafe198fa944e50c1b31c9d8daa8d7f1fc2d2d6
+-- KernelSU is PR Build: 0
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/core/init.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/kernel_umount.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/module_blacklist.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sulog.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/sucompat.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/lsm_hook.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/setuid_hook.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/syscall_event_bridge.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/syscall_hook_manager.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/tp_marker.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/patch_memory.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/hook/arm64/syscall_hook.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/file_wrapper.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/event_queue.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/seccomp_cache.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/file_wrapper.c: In function ‘ksu_anon_inode_make_secure_inode’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/file_wrapper.c:443:23: warning: unused variable ‘qname’ [-Wunused-variable]
+  443 |     const struct qstr qname = QSTR_INIT(name, strlen(name));
+      |                       ^~~~~
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/su_mount_ns.o
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/symbol_resolver.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/apk_sign.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/pkg_observer.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/manager/throne_tracker.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/allowlist.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/app_profile.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/policy/feature.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/boot_event.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/runtime/ksud_integration.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/infra/btf_parser.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/inode.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/selinux.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c: In function ‘handle_sepolicy’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:722:5: error: ‘pol’ undeclared (first use in this function)
+  722 |     pol->latest_granting = old_pol->latest_granting + 1;
+      |     ^~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:722:5: note: each undeclared identifier is reported only once for each function it appears in
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:722:28: error: ‘old_pol’ undeclared (first use in this function)
+  722 |     pol->latest_granting = old_pol->latest_granting + 1;
+      |                            ^~~~~~~
+In file included from ./arch/arm64/include/asm/current.h:5,
+                 from ./include/linux/sched.h:12,
+                 from ./include/linux/sched/task.h:10,
+                 from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/include/ksu_compat.h:10,
+                 from <command-line>:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./include/linux/compiler.h:300:24: note: in definition of macro ‘WRITE_ONCE’
+  300 |         union { typeof(x) __val; char __c[1]; } __u =   \
+      |                        ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./include/linux/compiler.h:301:44: note: in definition of macro ‘WRITE_ONCE’
+  301 |                 { .__val = (__force typeof(x)) (val) }; \
+      |                                            ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./include/linux/compiler.h:301:49: note: in definition of macro ‘WRITE_ONCE’
+  301 |                 { .__val = (__force typeof(x)) (val) }; \
+      |                                                 ^~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./include/linux/compiler.h:302:29: note: in definition of macro ‘WRITE_ONCE’
+  302 |         __write_once_size(&(x), __u.__c, sizeof(x));    \
+      |                             ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./include/linux/compiler.h:302:49: note: in definition of macro ‘WRITE_ONCE’
+  302 |         __write_once_size(&(x), __u.__c, sizeof(x));    \
+      |                                                 ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+In file included from ./include/linux/compiler.h:270:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./arch/arm64/include/asm/barrier.h:66:16: note: in definition of macro ‘__smp_store_release’
+   66 |         typeof(p) __p = (p);                                            \
+      |                ^
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./arch/arm64/include/asm/barrier.h:66:26: note: in definition of macro ‘__smp_store_release’
+   66 |         typeof(p) __p = (p);                                            \
+      |                          ^
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./arch/arm64/include/asm/barrier.h:67:25: note: in definition of macro ‘__smp_store_release’
+   67 |         union { typeof(*p) __val; char __c[1]; } __u =                  \
+      |                         ^
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./arch/arm64/include/asm/barrier.h:68:45: note: in definition of macro ‘__smp_store_release’
+   68 |                 { .__val = (__force typeof(*p)) (v) };                  \
+      |                                             ^
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./arch/arm64/include/asm/barrier.h:68:50: note: in definition of macro ‘__smp_store_release’
+   68 |                 { .__val = (__force typeof(*p)) (v) };                  \
+      |                                                  ^
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+./include/linux/rcupdate.h:382:39: note: in expansion of macro ‘RCU_INITIALIZER’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                                       ^~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./arch/arm64/include/asm/barrier.h:68:50: note: in definition of macro ‘__smp_store_release’
+   68 |                 { .__val = (__force typeof(*p)) (v) };                  \
+      |                                                  ^
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+./include/linux/rcupdate.h:382:39: note: in expansion of macro ‘RCU_INITIALIZER’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                                       ^~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./include/linux/compiler.h:344:23: note: in definition of macro ‘__compiletime_assert’
+  344 |                 if (!(condition))                                       \
+      |                       ^~~~~~~~~
+./include/linux/compiler.h:364:9: note: in expansion of macro ‘_compiletime_assert’
+  364 |         _compiletime_assert(condition, msg, __compiletime_assert_, __COUNTER__)
+      |         ^~~~~~~~~~~~~~~~~~~
+./include/linux/compiler.h:367:9: note: in expansion of macro ‘compiletime_assert’
+  367 |         compiletime_assert(__native_word(t),                            \
+      |         ^~~~~~~~~~~~~~~~~~
+./include/linux/compiler.h:367:28: note: in expansion of macro ‘__native_word’
+  367 |         compiletime_assert(__native_word(t),                            \
+      |                            ^~~~~~~~~~~~~
+./arch/arm64/include/asm/barrier.h:69:9: note: in expansion of macro ‘compiletime_assert_atomic_type’
+   69 |         compiletime_assert_atomic_type(*p);                             \
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/asm-generic/barrier.h:153:33: note: in expansion of macro ‘__smp_store_release’
+  153 | #define smp_store_release(p, v) __smp_store_release(p, v)
+      |                                 ^~~~~~~~~~~~~~~~~~~
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./include/linux/compiler.h:344:23: note: in definition of macro ‘__compiletime_assert’
+  344 |                 if (!(condition))                                       \
+      |                       ^~~~~~~~~
+./include/linux/compiler.h:364:9: note: in expansion of macro ‘_compiletime_assert’
+  364 |         _compiletime_assert(condition, msg, __compiletime_assert_, __COUNTER__)
+      |         ^~~~~~~~~~~~~~~~~~~
+./include/linux/compiler.h:367:9: note: in expansion of macro ‘compiletime_assert’
+  367 |         compiletime_assert(__native_word(t),                            \
+      |         ^~~~~~~~~~~~~~~~~~
+./include/linux/compiler.h:367:28: note: in expansion of macro ‘__native_word’
+  367 |         compiletime_assert(__native_word(t),                            \
+      |                            ^~~~~~~~~~~~~
+./arch/arm64/include/asm/barrier.h:69:9: note: in expansion of macro ‘compiletime_assert_atomic_type’
+   69 |         compiletime_assert_atomic_type(*p);                             \
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/asm-generic/barrier.h:153:33: note: in expansion of macro ‘__smp_store_release’
+  153 | #define smp_store_release(p, v) __smp_store_release(p, v)
+      |                                 ^~~~~~~~~~~~~~~~~~~
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./include/linux/compiler.h:344:23: note: in definition of macro ‘__compiletime_assert’
+  344 |                 if (!(condition))                                       \
+      |                       ^~~~~~~~~
+./include/linux/compiler.h:364:9: note: in expansion of macro ‘_compiletime_assert’
+  364 |         _compiletime_assert(condition, msg, __compiletime_assert_, __COUNTER__)
+      |         ^~~~~~~~~~~~~~~~~~~
+./include/linux/compiler.h:367:9: note: in expansion of macro ‘compiletime_assert’
+  367 |         compiletime_assert(__native_word(t),                            \
+      |         ^~~~~~~~~~~~~~~~~~
+./include/linux/compiler.h:367:28: note: in expansion of macro ‘__native_word’
+  367 |         compiletime_assert(__native_word(t),                            \
+      |                            ^~~~~~~~~~~~~
+./arch/arm64/include/asm/barrier.h:69:9: note: in expansion of macro ‘compiletime_assert_atomic_type’
+   69 |         compiletime_assert_atomic_type(*p);                             \
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/asm-generic/barrier.h:153:33: note: in expansion of macro ‘__smp_store_release’
+  153 | #define smp_store_release(p, v) __smp_store_release(p, v)
+      |                                 ^~~~~~~~~~~~~~~~~~~
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./include/linux/compiler.h:344:23: note: in definition of macro ‘__compiletime_assert’
+  344 |                 if (!(condition))                                       \
+      |                       ^~~~~~~~~
+./include/linux/compiler.h:364:9: note: in expansion of macro ‘_compiletime_assert’
+  364 |         _compiletime_assert(condition, msg, __compiletime_assert_, __COUNTER__)
+      |         ^~~~~~~~~~~~~~~~~~~
+./include/linux/compiler.h:367:9: note: in expansion of macro ‘compiletime_assert’
+  367 |         compiletime_assert(__native_word(t),                            \
+      |         ^~~~~~~~~~~~~~~~~~
+./include/linux/compiler.h:367:28: note: in expansion of macro ‘__native_word’
+  367 |         compiletime_assert(__native_word(t),                            \
+      |                            ^~~~~~~~~~~~~
+./arch/arm64/include/asm/barrier.h:69:9: note: in expansion of macro ‘compiletime_assert_atomic_type’
+   69 |         compiletime_assert_atomic_type(*p);                             \
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/asm-generic/barrier.h:153:33: note: in expansion of macro ‘__smp_store_release’
+  153 | #define smp_store_release(p, v) __smp_store_release(p, v)
+      |                                 ^~~~~~~~~~~~~~~~~~~
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./arch/arm64/include/asm/barrier.h:70:40: note: in definition of macro ‘__smp_store_release’
+   70 |         kasan_check_write(__p, sizeof(*p));                             \
+      |                                        ^
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:38: error: ‘struct selinux_state’ has no member named ‘policy’; did you mean ‘policycap’?
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |                                      ^~~~~~
+./arch/arm64/include/asm/barrier.h:71:25: note: in definition of macro ‘__smp_store_release’
+   71 |         switch (sizeof(*p)) {                                           \
+      |                         ^
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+./arch/arm64/include/asm/barrier.h:74:41: error: invalid type argument of unary ‘*’ (have ‘int’)
+   74 |                                 : "=Q" (*__p)                           \
+      |                                         ^~~~
+./include/asm-generic/barrier.h:153:33: note: in expansion of macro ‘__smp_store_release’
+  153 | #define smp_store_release(p, v) __smp_store_release(p, v)
+      |                                 ^~~~~~~~~~~~~~~~~~~
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+./arch/arm64/include/asm/barrier.h:80:41: error: invalid type argument of unary ‘*’ (have ‘int’)
+   80 |                                 : "=Q" (*__p)                           \
+      |                                         ^~~~
+./include/asm-generic/barrier.h:153:33: note: in expansion of macro ‘__smp_store_release’
+  153 | #define smp_store_release(p, v) __smp_store_release(p, v)
+      |                                 ^~~~~~~~~~~~~~~~~~~
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+./arch/arm64/include/asm/barrier.h:86:41: error: invalid type argument of unary ‘*’ (have ‘int’)
+   86 |                                 : "=Q" (*__p)                           \
+      |                                         ^~~~
+./include/asm-generic/barrier.h:153:33: note: in expansion of macro ‘__smp_store_release’
+  153 | #define smp_store_release(p, v) __smp_store_release(p, v)
+      |                                 ^~~~~~~~~~~~~~~~~~~
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+./arch/arm64/include/asm/barrier.h:92:41: error: invalid type argument of unary ‘*’ (have ‘int’)
+   92 |                                 : "=Q" (*__p)                           \
+      |                                         ^~~~
+./include/asm-generic/barrier.h:153:33: note: in expansion of macro ‘__smp_store_release’
+  153 | #define smp_store_release(p, v) __smp_store_release(p, v)
+      |                                 ^~~~~~~~~~~~~~~~~~~
+./include/linux/rcupdate.h:382:17: note: in expansion of macro ‘smp_store_release’
+  382 |                 smp_store_release(&p, RCU_INITIALIZER((typeof(p))_r_a_p__v)); \
+      |                 ^~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:723:5: note: in expansion of macro ‘rcu_assign_pointer’
+  723 |     rcu_assign_pointer(selinux_state.policy, pol);
+      |     ^~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:725:5: error: implicit declaration of function ‘ksu_destroy_sepolicy’ [-Werror=implicit-function-declaration]
+  725 |     ksu_destroy_sepolicy(old_pol);
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.c:709:17: error: label ‘out_drop_new_policy’ used but not defined
+  709 |                 goto out_drop_new_policy;
+      |                 ^~~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+cc1: some warnings being treated as errors
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/rules.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/sulog/event.o
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c: In function ‘add_filename_trans’:
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:570:31: error: storage size of ‘key’ isn’t known
+  570 |     struct filename_trans_key key;
+      |                               ^~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:577:42: error: implicit declaration of function ‘policydb_filenametr_search’ [-Werror=implicit-function-declaration]
+  577 |     struct filename_trans_datum *trans = policydb_filenametr_search(db, &key);
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:579:37: error: ‘struct filename_trans_datum’ has no member named ‘stypes’; did you mean ‘otype’?
+  579 |         if (ebitmap_get_bit(&trans->stypes, src->value - 1)) {
+      |                                     ^~~~~~
+      |                                     otype
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:587:22: error: ‘struct filename_trans_datum’ has no member named ‘next’
+  587 |         trans = trans->next;
+      |                      ^~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:596:62: error: invalid application of ‘sizeof’ to incomplete type ‘struct filename_trans_key’
+  596 |         new_key = (struct filename_trans_key *)kzalloc(sizeof(*new_key), GFP_KERNEL);
+      |                                                              ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:601:18: error: invalid use of undefined type ‘struct filename_trans_key’
+  601 |         *new_key = key;
+      |                  ^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:602:16: error: invalid use of undefined type ‘struct filename_trans_key’
+  602 |         new_key->name = kstrdup(key.name, GFP_KERNEL);
+      |                ^~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:603:21: error: invalid use of undefined type ‘struct filename_trans_key’
+  603 |         if (!new_key->name) {
+      |                     ^~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:607:14: error: ‘struct filename_trans_datum’ has no member named ‘next’
+  607 |         trans->next = last;
+      |              ^~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:609:66: error: ‘filenametr_key_params’ undeclared (first use in this function)
+  609 |         rc = hashtab_insert(&db->filename_trans, new_key, trans, filenametr_key_params);
+      |                                                                  ^~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:609:66: note: each undeclared identifier is reported only once for each function it appears in
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:609:29: error: passing argument 1 of ‘hashtab_insert’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  609 |         rc = hashtab_insert(&db->filename_trans, new_key, trans, filenametr_key_params);
+      |                             ^~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             struct hashtab **
+In file included from /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:4:
+./security/selinux/ss/hashtab.h:55:36: note: expected ‘struct hashtab *’ but argument is of type ‘struct hashtab **’
+   55 | int hashtab_insert(struct hashtab *h, void *k, void *d);
+      |                    ~~~~~~~~~~~~~~~~^
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:609:14: error: too many arguments to function ‘hashtab_insert’
+  609 |         rc = hashtab_insert(&db->filename_trans, new_key, trans, filenametr_key_params);
+      |              ^~~~~~~~~~~~~~
+./security/selinux/ss/hashtab.h:55:5: note: declared here
+   55 | int hashtab_insert(struct hashtab *h, void *k, void *d);
+      |     ^~~~~~~~~~~~~~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:616:7: error: ‘struct policydb’ has no member named ‘compat_filename_trans_count’
+  616 |     db->compat_filename_trans_count++;
+      |       ^~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:617:36: error: ‘struct filename_trans_datum’ has no member named ‘stypes’; did you mean ‘otype’?
+  617 |     return ebitmap_set_bit(&trans->stypes, src->value - 1, 1) == 0;
+      |                                    ^~~~~~
+      |                                    otype
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:620:18: error: invalid use of undefined type ‘struct filename_trans_key’
+  620 |     kfree(new_key->name);
+      |                  ^~
+/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.c:570:31: warning: unused variable ‘key’ [-Wunused-variable]
+  570 |     struct filename_trans_key key;
+      |                               ^~~
+At top level:
+cc1: note: unrecognized command-line option ‘-Wno-gcc-compat’ may have been intended to silence earlier diagnostics
+cc1: some warnings being treated as errors
+make[1]: *** [scripts/Makefile.build:288: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/selinux/sepolicy.o] Error 1
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/sulog/fd.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/dispatch.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/perm.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/supercall/supercall.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/adb_root.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/selinux_hide.o
+  CC [M]  /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel/feature/shell_su_adb_only.o
+make[1]: Target '__build' not remade because of errors.
+make: *** [Makefile:1843: /home/runner/work/odin-ksu-lkm/odin-ksu-lkm/ksu/kernel] Error 2
+make: Target 'modules' not remade because of errors.
+make: Leaving directory '/home/runner/work/odin-ksu-lkm/odin-ksu-lkm/odin'

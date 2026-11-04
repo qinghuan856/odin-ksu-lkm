@@ -538,6 +538,8 @@ static const struct hashtab_key_params filenametr_key_params = {
 };
 #endif
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
+/* 5.6+ 的 filename_trans 布局 */
 static bool add_filename_trans(struct policydb *db, const char *s, const char *t, const char *c, const char *d,
                                const char *o)
 {
@@ -625,6 +627,15 @@ free_trans:
 out:
     return false;
 }
+#else /* < 5.6: policydb 无 filename_trans_key / policydb_filenametr_search，带对象名的类型转换不支持 */
+static bool add_filename_trans(struct policydb *db, const char *s, const char *t, const char *c, const char *d,
+                               const char *o)
+{
+    (void)db; (void)s; (void)t; (void)c; (void)d; (void)o;
+    pr_warn("add_filename_trans unsupported on this kernel\n");
+    return false;
+}
+#endif
 
 static bool add_genfscon(struct policydb *db, const char *fs_name, const char *path, const char *context)
 {

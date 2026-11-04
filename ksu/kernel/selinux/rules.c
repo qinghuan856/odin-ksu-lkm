@@ -719,12 +719,6 @@ int handle_sepolicy(void __user *user_data, u64 data_len)
         cmd_index++;
     }
 
-    pol->latest_granting = old_pol->latest_granting + 1;
-    rcu_assign_pointer(selinux_state.policy, pol);
-    synchronize_rcu();
-    ksu_destroy_sepolicy(old_pol);
-
-    reset_avc_cache(pol->latest_granting);
     ret = success_cmd_count;
 
     rcu_read_unlock();
