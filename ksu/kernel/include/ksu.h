@@ -13,7 +13,9 @@ extern bool allow_shell;
 #ifdef MODULE
 extern bool ksu_bundled;
 #endif
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 7, 0)
 extern struct selinux_policy *backup_sepolicy;
+#endif
 extern bool ksu_no_custom_rc;
 
 static inline int startswith(char *s, char *prefix)

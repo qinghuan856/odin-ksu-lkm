@@ -1,3 +1,5 @@
+#include <linux/version.h>
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 7, 0)
 #include "selinux_hide.h"
 #include "infra/symbol_resolver.h"
 #include "linux/jump_label.h"
@@ -1266,3 +1268,11 @@ allow:
     avd->allowed = 0xffffffff;
     goto out;
 }
+
+#else /* < 5.7: 没有 selinux_policy / status_lock，整个隐身特性关闭 */
+void ksu_selinux_hide_init(void) { }
+void ksu_selinux_hide_exit(void) { }
+void ksu_selinux_hide_drop_backup_if_unused(void) { }
+void ksu_selinux_hide_handle_second_stage(void) { }
+void ksu_selinux_hide_handle_post_fs_data(void) { }
+#endif

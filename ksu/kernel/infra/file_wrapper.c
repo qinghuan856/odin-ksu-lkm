@@ -451,7 +451,12 @@ static struct inode *ksu_anon_inode_make_secure_inode(const char *name, const st
     if (IS_ERR(inode))
         return inode;
     inode->i_flags &= ~S_PRIVATE;
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
     error = security_inode_init_security_anon(inode, &qname, context_inode);
+#else
+    /* 5.4 无 security_inode_init_security_anon，anon inode 用默认标签 */
+    error = 0;
+#endif
     if (error) {
         iput(inode);
         return ERR_PTR(error);

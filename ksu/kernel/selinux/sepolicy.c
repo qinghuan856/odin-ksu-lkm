@@ -895,6 +895,8 @@ bool ksu_genfscon(struct policydb *db, const char *fs_name, const char *path, co
 
 // ======== sepolicy ========
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 7, 0)
+/* 5.7+ 才有 struct selinux_policy；5.4 走 rules.c 里的原地修改路径 */
 void ksu_destroy_sepolicy(struct selinux_policy *pol)
 {
     policydb_destroy(&pol->policydb);
@@ -980,3 +982,4 @@ out_free_data:
 
     return ERR_PTR(ret);
 }
+#endif
