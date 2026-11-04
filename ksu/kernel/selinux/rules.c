@@ -692,21 +692,21 @@ int handle_sepolicy(void __user *user_data, u64 data_len)
         ret = sepol_read_cmd_header(&cursor, &header);
         if (ret < 0) {
             pr_err("sepol: failed to read cmd header #%u.\n", cmd_index);
-            goto out_drop_new_policy;
+            goto out_free_payload;
         }
 
         expected_argc = sepol_expected_argc(header.cmd);
         if (expected_argc < 0 || expected_argc > KSU_SEPOLICY_MAX_ARGS) {
             ret = -EINVAL;
             pr_err("sepol: invalid cmd header #%u.\n", cmd_index);
-            goto out_drop_new_policy;
+            goto out_free_payload;
         }
 
         for (arg_index = 0; arg_index < (u32)expected_argc; arg_index++) {
             ret = sepol_read_string(&cursor, &args[arg_index]);
             if (ret < 0) {
                 pr_err("sepol: failed to read cmd #%u arg #%u.\n", cmd_index, arg_index);
-                goto out_drop_new_policy;
+                goto out_free_payload;
             }
         }
 
@@ -721,6 +721,7 @@ int handle_sepolicy(void __user *user_data, u64 data_len)
 
     ret = success_cmd_count;
 
+out_free_payload:
     rcu_read_unlock();
     reset_avc_cache(0);
     kvfree(payload);
