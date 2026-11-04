@@ -11,6 +11,10 @@ on:
         description: 'odin 内核分支'
         required: true
         default: 'odin-r-oss'
+      tree_repo:
+        description: '内核源码仓库（可换成第三方维护的 odin 树）'
+        required: true
+        default: 'https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git'
       config_path:
         description: '内核 config 路径(留空=自动探测)'
         required: false
@@ -49,7 +53,7 @@ jobs:
       - name: 克隆 odin 内核
         run: |
           git clone --depth 1 --single-branch -b "${{ inputs.odin_branch }}" \
-            https://github.com/MiCode/Xiaomi_Kernel_OpenSource.git odin
+            "${{ inputs.tree_repo }}" odin
           find odin/arch/arm64/configs -type f -name '*odin*' | head -20
           head -5 odin/Makefile | grep -E 'VERSION|PATCHLEVEL|SUBLEVEL'
 
@@ -59,7 +63,13 @@ jobs:
           cd odin
 
           CFG="${{ inputs.config_path }}"
-          if [ -z "$CFG" ]; then
+          # 仓库自带的设备真实配置（由官方 OTA boot.img 的 IKCONFIG 提取）
+          if [ -z "$CFG" ] && [ -f "$GITHUB_WORKSPACE/device.config" ]; then
+            echo "使用设备真实配置 device.config（$(wc -c < "$GITHUB_WORKSPACE/device.config") 字节）"
+            cp "$GITHUB_WORKSPACE/device.config" .config
+            CFG="__DEVICE__"
+          fi
+          if [ -z "$CFG" ] && [ ! -f .config ]; then
             for c in arch/arm64/configs/vendor/odin_QGKI.config \
                      arch/arm64/configs/vendor/odin_defconfig \
                      arch/arm64/configs/odin_QGKI.config \
@@ -68,14 +78,21 @@ jobs:
               [ -f "$c" ] && { CFG="$c"; break; }
             done
           fi
-          [ -n "$CFG" ] && [ -f "$CFG" ] || { echo "::error::没找到 config"; exit 1; }
+          if [ "$CFG" != "__DEVICE__" ]; then
+            [ -n "$CFG" ] && [ -f "$CFG" ] || { echo "::error::没找到 config"; exit 1; }
+          fi
 
           echo "--- 仓库里全部 arm64 config ---"
           find arch/arm64/configs -type f | sed 's|arch/arm64/configs/||' | sort | head -40
 
-          REL="${CFG#arch/arm64/configs/}"
+          if [ "$CFG" = "__DEVICE__" ]; then
+            REL="__DEVICE__"
+          else
+            REL="${CFG#arch/arm64/configs/}"
+          fi
           echo "target fragment=$CFG rel=$REL"
           case "$REL" in
+            __DEVICE__)  : ;;
             *_defconfig)
               make ARCH=arm64 "$REL"
               ;;
